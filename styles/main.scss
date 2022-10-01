@@ -1,6 +1,10 @@
 @use "./partials/setup";
+
+@use "./partials/backgroundGradient";
+
 //used namespacing as f so to use variables or mixins, we have to write f.$solidFont or f.font
 @use "./partials/fontsAndTypography" as f;
+
 
 html{
     font-size: 62.5%;
