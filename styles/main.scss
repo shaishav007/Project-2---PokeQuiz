@@ -1,19 +1,10 @@
 @use "./partials/setup";
-<<<<<<< HEAD
 @use "partials/variables" as *;
 @use "./partials/fontsAndTypography";
 @use "./partials/backgroundGradient";
 @use "./partials/header";
 @use "./partials/difficultySection";
 @use "./partials/gameSection";
-=======
-
-@use "./partials/backgroundGradient";
-
-//used namespacing as f so to use variables or mixins, we have to write f.$solidFont or f.font
-@use "./partials/fontsAndTypography" as f;
-
->>>>>>> f8a6225d65f74604bc24be970864bccb4244743d
 
 html{
     font-size: 62.5%;
