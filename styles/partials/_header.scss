@@ -1,0 +1,37 @@
+@use "variables" as *;
+
+header{
+  background-color: $pokemonBlueLight;
+}
+
+nav {
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0 auto;
+    padding-left: 0;
+    li{
+      padding:25px;
+    }
+  }
+  a {
+    text-decoration: none;
+    font-family: $solidFont;
+    color: $pokemonYellow;
+    text-transform: uppercase;
+    font-size: 20px;
+    text-align: center;
+    line-height: 29px;
+    letter-spacing: 7px;
+    transition: 0.7s ease;
+    cursor: pointer;
+    &:hover{
+        color: $pokemonRed;
+    }
+    &:focus{
+        color: $pokemonRedShadow;
+    }
+  }
+}

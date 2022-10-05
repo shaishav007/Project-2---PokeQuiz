@@ -1,0 +1,68 @@
+@use "variables" as *;
+.gameBackground{
+    background-color: firebrick;
+    // background-position: 25% 75%;
+    height: 50vh;
+
+}
+
+.gameSection{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h2{
+        font-size: clamp(2rem,7vw,7rem);
+    }
+    
+}
+
+.imageContainer{
+    border: 2rem solid rebeccapurple;
+    background: rgb(241, 241, 241);
+    background: radial-gradient(
+      circle,
+      rgba(241, 241, 241, 1) 1%,
+      rgba(42, 117, 187, 1) 30%,
+      rgba(232, 0, 13, 1) 91%
+    );
+    width: clamp(10rem, 15vw, 35rem);
+    img{
+        width: 100%;
+    }
+} 
+
+.optionsList {
+    list-style: none;
+    display: flex;
+    width: 60%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    li {
+        width: 40%;
+      }
+    .option {
+        width: 100%;
+      }
+  }
+
+  button {
+    background-color: #c7a008;
+    font-family: $solidFont;
+    text-decoration: none;
+    color: $pokemonRed;
+    text-transform: capitalize;
+    font-size: 20px;
+    text-align: center;
+    line-height: 29px;
+    letter-spacing: 3px;
+    padding: 5px 0;
+    transition: 0.7s ease;
+    cursor: pointer;
+    &:hover{
+        color: $pokemonRed;
+    }
+    &:focus{
+        color: $pokemonRedShadow;
+    }
+  }
