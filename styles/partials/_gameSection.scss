@@ -1,3 +1,4 @@
+@use "variables" as *;
 .gameBackground{
     background-color: firebrick;
     // background-position: 25% 75%;
@@ -43,4 +44,25 @@
     .option {
         width: 100%;
       }
+  }
+
+  button {
+    background-color: #c7a008;
+    font-family: $solidFont;
+    text-decoration: none;
+    color: $pokemonRed;
+    text-transform: capitalize;
+    font-size: 20px;
+    text-align: center;
+    line-height: 29px;
+    letter-spacing: 3px;
+    padding: 5px 0;
+    transition: 0.7s ease;
+    cursor: pointer;
+    &:hover{
+        color: $pokemonRed;
+    }
+    &:focus{
+        color: $pokemonRedShadow;
+    }
   }

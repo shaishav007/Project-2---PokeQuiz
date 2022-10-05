@@ -344,6 +344,27 @@ nav a:focus {
   width: 100%;
 }
 
+button {
+  background-color: #c7a008;
+  font-family: "Pokemon-Solid";
+  text-decoration: none;
+  color: #ff0000;
+  text-transform: capitalize;
+  font-size: 20px;
+  text-align: center;
+  line-height: 29px;
+  letter-spacing: 3px;
+  padding: 5px 0;
+  transition: 0.7s ease;
+  cursor: pointer;
+}
+button:hover {
+  color: #ff0000;
+}
+button:focus {
+  color: #cc0000;
+}
+
 html {
   font-size: 62.5%;
 }
