@@ -8,15 +8,55 @@
     <link rel="stylesheet" href="./styles/main.css" />
   </head>
   <body>
-    <header>
-      <nav>
-        <ul>
-          <li></li>
+    
+    <header class="wrapper">
+      <nav class="navBar">
+        <ul class="navList">
+          <li class="navItem"><a href="./index.html">Home</a></li>
+          <li class="navItem"><a href="./contactUs.html">Contact us</a></li>
         </ul>
+        <!-- .navList ends -->
       </nav>
+      <!-- .navBar ends -->
     </header>
-    <section class="dropdownSection"></section>
-    <section class="gameSection"></section>
+    <main>
+    <section class="dropdownSection wrapper">
+      <div class="headerText">
+        <h1>Name the Pokemon quiz!</h1>
+      </div>
+      <div class="contentContainer">
+        <img
+          src="./assets/placeHolderSprites/jolteon.png"
+          alt="a jolteon placeholder image"
+        />
+        <div class="dropdownMenu">
+          <select name="generationSelection" id="dropdown">
+            <option>Generation 1 - 1 to 151 Pokemon</option>
+            <option>Generation 2 - 151 to 252 Pokemon</option>
+            <option>Generation 3 - 252 to 386 Pokemon</option>
+          </select>
+        </div>
+        <img
+          src="./assets/placeHolderSprites/vaporeon.png"
+          alt="a vaporeon placeholder image"
+        />
+      </div>
+    </section>
+    <section class="gameBackground">
+      <div class="gameSection wrapper flexContainer">
+        <h2>Who's that Pokemon?</h2>
+        <div class="imageContainer">
+          <img src="./assets/placeHolderSprites/snorlax.png" alt="snorlax" />
+        </div>
+        <ul class="optionsList">
+          <!-- <li><button class="option">snorlax</button></li>
+          <li><button class="option">charizard</button></li>
+          <li><button class="option">mewtwo</button></li>
+          <li><button class="option">weedle</button></li> -->
+        </ul>
+      </div>
+    </section>
+    </main>
     <script src="./scripts/app.js"></script>
   </body>
 </html>
