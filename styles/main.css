@@ -229,6 +229,13 @@ html {
   font-family: "Pokemon-Hollow";
   src: url(../assets/fontsAndTypography/pokemon-hollow-font/PokemonHollowNormal-pyPZ.ttf);
 }
+.gameSection {
+  width: 100%;
+  height: 75vh;
+  background: rgb(241, 241, 241);
+  background: radial-gradient(circle, rgb(241, 241, 241) 1%, rgb(42, 117, 187) 30%, rgb(232, 0, 13) 91%);
+}
+
 .dropdownSection {
   width: 100%;
   height: 75vh;
