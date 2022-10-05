@@ -239,8 +239,9 @@ html {
 .dropdownSection {
   width: 100%;
   height: 75vh;
-  background: rgb(131, 3, 3);
-  background: linear-gradient(180deg, rgb(131, 3, 3) 20%, rgb(233, 9, 9) 40%, rgb(8, 7, 7) 53%, rgb(231, 231, 231) 59%, rgb(112, 109, 109) 100%);
+  background-image: url(../assets/backgroundImages/17070480.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 header {
