@@ -221,8 +221,6 @@ html {
   overflow: hidden;
 }
 
-<<<<<<< HEAD
-=======
 
 .gameSection {
   width: 100%;
@@ -237,7 +235,7 @@ html {
   background: rgb(131, 3, 3);
   background: linear-gradient(180deg, rgb(131, 3, 3) 20%, rgb(233, 9, 9) 40%, rgb(8, 7, 7) 53%, rgb(231, 231, 231) 59%, rgb(112, 109, 109) 100%);
 
->>>>>>> f8a6225d65f74604bc24be970864bccb4244743d
+
 @font-face {
   font-family: "Pokemon-Solid";
   src: url(../assets/fontsAndTypography/pokemon-solid-font/PokemonSolidNormal-xyWR.ttf);
@@ -246,16 +244,16 @@ html {
   font-family: "Pokemon-Hollow";
   src: url(../assets/fontsAndTypography/pokemon-hollow-font/PokemonHollowNormal-pyPZ.ttf);
 }
-<<<<<<< HEAD
+
 .dropdownSection {
   width: 100%;
   height: 75vh;
   background: rgb(131, 3, 3);
   background: linear-gradient(180deg, rgb(131, 3, 3) 20%, rgb(233, 9, 9) 40%, rgb(8, 7, 7) 53%, rgb(231, 231, 231) 59%, rgb(112, 109, 109) 100%);
-=======
+
 html {
   font-size: 62.5%;
->>>>>>> f8a6225d65f74604bc24be970864bccb4244743d
+
 }
 
 header {
