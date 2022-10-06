@@ -6,12 +6,25 @@
 @use "./partials/difficultySection";
 @use "./partials/gameSection";
 
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
 html{
     font-size: 62.5%;
 }
 
+body {
+    font-family: $bodyFont;
+    min-height: 100vh;
+}
+
 .flexContainer{
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .wrapper{

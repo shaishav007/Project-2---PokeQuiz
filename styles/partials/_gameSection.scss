@@ -1,68 +1,94 @@
 @use "variables" as *;
-.gameBackground{
-    background-color: firebrick;
-    // background-position: 25% 75%;
-    height: 50vh;
 
-}
 
-.gameSection{
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    h2{
-        font-size: clamp(2rem,7vw,7rem);
-    }
-    
-}
+.pokeWrapper {
+    background-color: $pokemonRed;
+    padding: 1.5rem 4rem 3rem 4rem;
+    width: 350px;
+    height: 475px;
+    border-top-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+    // position: relative;
+    box-shadow: 0 4px 6px rgb(0 0 0 /10%), 0 1px 3px rgb(0 0 0 / 10%);
+  }
 
-.imageContainer{
-    border: 2rem solid rebeccapurple;
-    background: rgb(241, 241, 241);
-    background: radial-gradient(
-      circle,
-      rgba(241, 241, 241, 1) 1%,
-      rgba(42, 117, 187, 1) 30%,
-      rgba(232, 0, 13, 1) 91%
-    );
-    width: clamp(10rem, 15vw, 35rem);
-    img{
-        width: 100%;
-    }
-} 
-
-.optionsList {
-    list-style: none;
+.quizContainer{
     display: flex;
-    width: 60%;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    li {
-        width: 40%;
-      }
-    .option {
+}
+
+  .spriteContainer{
+    border: 10px solid rgb(51, 51, 51);
+    background: rgb(194,203,241);
+    background: radial-gradient(circle, rgba(194,203,241,1) 0%, rgba(122,133,226,1) 48%, rgba(230,77,77,0.9791193008422852) 100%); 
+    // background: rgb(241, 241, 241);
+    // background: radial-gradient(
+    //     circle,
+    //     rgba(241, 241, 241, 1) 1%,
+    //     rgba(42, 117, 187, 1) 30%,
+    //     rgba(232, 0, 13, 1) 91%
+    // );
+    // width: clamp(10rem, 15vw, 35rem);
+    width: 180px;
+    img {
         width: 100%;
+    }
+  }
+
+  .gameTitle{
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .nameTitle{
+    font-size: 1.2rem;
+  text-align: center;
+  line-height: 1.3;
+  margin-bottom: 2rem;
+  }
+
+  .quizOptions{
+    list-style-type: none;
+    margin: 1rem;
+    li {
+        border-radius: 0.5rem;
+        font-weight: 600;
+        margin: 0.7rem 0;
+        padding: 0.4rem 1.2rem;
+        cursor: pointer;
+        border: 3px solid $pokemonYellow;
+        background-color: $pokemonYellow;
+        color: black;
+        box-shadow: 0 4px 0 0 $pokemonYellowShadow;
+        transition: all 300ms ease-in-out;
+      }
+      &:hover {
+        color: $pokemonBlueLight;
+        ;
+      }
+      &:active {
+        transform: scale(0.97);
       }
   }
 
-  button {
-    background-color: #c7a008;
-    font-family: $solidFont;
-    text-decoration: none;
-    color: $pokemonRed;
-    text-transform: capitalize;
-    font-size: 20px;
-    text-align: center;
-    line-height: 29px;
-    letter-spacing: 3px;
-    padding: 5px 0;
-    transition: 0.7s ease;
-    cursor: pointer;
-    &:hover{
-        color: $pokemonRed;
-    }
-    &:focus{
-        color: $pokemonRedShadow;
-    }
+  .quizFooter {
+    button {
+        border: none;
+        border-radius: 0.5rem;
+        outline: 0;
+        font-family: $bodyFont;
+        font-size: 1.2rem;
+        font-weight: 600;
+        padding: 0.5rem 1rem;
+        margin: 0 auto;
+        text-transform: uppercase;
+        cursor: pointer;
+        display: block;
+        background-color: $pokemonGreen;
+        color: black;
+        letter-spacing: 2px;
+        transition: all 300ms ease-in-out;
+        box-shadow: 0 4px 0 0 $pokemonGreenDark;
+      }
   }

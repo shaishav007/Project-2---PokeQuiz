@@ -11,9 +11,15 @@
     src: url(../assets/fontsAndTypography/pokemon-hollow-font/PokemonHollowNormal-pyPZ.ttf);
 }
 
+@font-face {
+    font-family: 'game-text';
+    src: url(../assets/fontsAndTypography/PressStart2P/PressStart2P-Regular.ttf);
+}
+
 // you can't really write f.'Pokemon-solid' in your main css so you store it in these variables
 $solidFont : 'Pokemon-Solid';
 $hollowFont: 'Pokemon-Hollow';
+$bodyFont: 'game-text';
 
 @mixin font($family,$size){
     // $family and $size defined above are placeholder values that you are supposed to replace by actual values when you call this mixin, whatever is going to be written in the space occupied by $family is going to end up wherever you have $family written below, same for $size
