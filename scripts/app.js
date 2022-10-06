@@ -6,18 +6,7 @@
     const pokeApp ={};
     pokeApp.pokeArray = new Array();
     // we need to populate pokeArray with objects that have a name and image associated with them.
-    pokeApp.saveNameAndImage = function (data) {
-        // add pokemon object to pokeArray
-        pokeApp.pokeArray.push({
-            "name": data.name,
-            "image": data.sprites.front_default,
-            // by default it should be the wrong answer.
-            // we will generate one correct answer and set the below property to true. Leaving ONE correct answer.
-            "isCorrect":false
-        });
-        // const name = data.name;
-        
-      };
+    
     pokeApp.init = function(){
         // first, we fetch pokemon and populate the elements
         pokeApp.populate();
@@ -113,6 +102,12 @@
         });
       };
       
+       pokeApp.getThePokemon = async function(url){
+        //write the fetch request
+        const response = await fetch(url);
+        const data = await response.json();
+        return data;
+      };
     // writing the function to populate the image and four options.
     pokeApp.populate = function(){
         const indexes = [];
@@ -121,24 +116,49 @@
         const num = Math.ceil(Math.random() * 150);
         indexes.push(num);
       }
+
+      pokePromise = [];
         for (i = 1; i <= 4; i++) {
             
             let pokeURL = "https://pokeapi.co/api/v2/pokemon/";
             pokeURL += indexes.pop();
-            fetch(pokeURL)
-              .then((response) => {
-                return response.json();
+
+            //call an async function that has fetch functionality
+            pokePromise.push(pokeApp.getThePokemon(pokeURL));
+            // fetch(pokeURL)
+            //   .then((response) => {
+            //     return response.json();
                 
-              })
-              .then((data) => {
-                pokeApp.saveNameAndImage(data);
-                if(pokeApp.pokeArray.length==4){
-                    pokeApp.fillMarkups();
-                    //now that the markups are filled, every option so wrong, lets select a correct answer and then set up the game accordingly
-                    pokeApp.runGame();
-                  };
-              }); 
+            //   })
+            //   .then((data) => {
+            //     pokeApp.saveNameAndImage(data);
+            //     if(pokeApp.pokeArray.length==4){
+            //         pokeApp.fillMarkups();
+            //         //now that the markups are filled, every option so wrong, lets select a correct answer and then set up the game accordingly
+            //         pokeApp.runGame();
+            //       };
+            //   }); 
           }
+          //pending promises been saved in the array pokePromise
+          //run the promiseAll command to actually get the final array
+          Promise.all(pokePromise)
+                  .then((data)=>{
+                    //the data contains the entire pokeApp.pokeArray
+                    //for each pokemon in data fill in the proper values in pokeapp.pokeArray - name, image and isCorrect
+                    data.forEach((item)=>{
+                      //call a function to shorten the code or keep this code like this
+                      pokeApp.pokeArray.push({
+                        'name':item.name,
+                        'image':item.sprites.front_default,
+                        'isCorrect':false
+                      });
+                    });
+                    //our array is filled now fill buttons and image
+                    pokeApp.fillMarkups();
+
+                    //run the game
+                    pokeApp.runGame();
+                  });
     };
     
 
