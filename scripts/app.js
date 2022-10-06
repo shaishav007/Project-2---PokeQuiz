@@ -57,6 +57,7 @@
 
     //reset function called after the click has been done
     pokeApp.reset =function(){
+      
       //empty the array and all the list elements
       const quizOptions = document.querySelector(".quizOptions");
       const spriteContainer = document.querySelector(".spriteContainer");
@@ -80,11 +81,17 @@
           else{
             console.log("wrongAnswer");
           }
-          
+          //find the image and set the brightness to 1
+          const img = document.querySelector(".spriteContainer img");
+          img.style.filter=`brightness(1)`;
         }
       });
-      pokeApp.reset();
-      pokeApp.populate();
+      //add a timeout before it resets
+      setTimeout(() => {
+        pokeApp.reset();
+        pokeApp.populate();
+      },1000);
+      
     };
       
       pokeApp.fillMarkups = function (){
@@ -125,19 +132,7 @@
 
             //call an async function that has fetch functionality
             pokePromise.push(pokeApp.getThePokemon(pokeURL));
-            // fetch(pokeURL)
-            //   .then((response) => {
-            //     return response.json();
-                
-            //   })
-            //   .then((data) => {
-            //     pokeApp.saveNameAndImage(data);
-            //     if(pokeApp.pokeArray.length==4){
-            //         pokeApp.fillMarkups();
-            //         //now that the markups are filled, every option so wrong, lets select a correct answer and then set up the game accordingly
-            //         pokeApp.runGame();
-            //       };
-            //   }); 
+            
           }
           //pending promises been saved in the array pokePromise
           //run the promiseAll command to actually get the final array
@@ -146,6 +141,7 @@
                     //the data contains the entire pokeApp.pokeArray
                     //for each pokemon in data fill in the proper values in pokeapp.pokeArray - name, image and isCorrect
                     data.forEach((item)=>{
+                      console.log(data);
                       //call a function to shorten the code or keep this code like this
                       pokeApp.pokeArray.push({
                         'name':item.name,
