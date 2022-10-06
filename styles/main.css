@@ -229,6 +229,10 @@ html {
   font-family: "Pokemon-Hollow";
   src: url(../assets/fontsAndTypography/pokemon-hollow-font/PokemonHollowNormal-pyPZ.ttf);
 }
+@font-face {
+  font-family: "game-text";
+  src: url(../assets/fontsAndTypography/PressStart2P/PressStart2P-Regular.ttf);
+}
 .gameSection {
   width: 100%;
   height: 75vh;
@@ -313,72 +317,105 @@ nav a:focus {
   font-size: 24px;
 }
 
-.gameBackground {
-  background-color: firebrick;
-  height: 50vh;
+.pokeWrapper {
+  background-color: #ff0000;
+  padding: 1.5rem 4rem 3rem 4rem;
+  width: 350px;
+  height: 475px;
+  border-top-left-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.gameSection {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.gameSection h2 {
-  font-size: clamp(2rem, 7vw, 7rem);
-}
-
-.imageContainer {
-  border: 2rem solid rebeccapurple;
-  background: rgb(241, 241, 241);
-  background: radial-gradient(circle, rgb(241, 241, 241) 1%, rgb(42, 117, 187) 30%, rgb(232, 0, 13) 91%);
-  width: clamp(10rem, 15vw, 35rem);
-}
-.imageContainer img {
-  width: 100%;
-}
-
-.optionsList {
-  list-style: none;
+.quizContainer {
   display: flex;
-  width: 60%;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
 }
-.optionsList li {
-  width: 40%;
+
+.spriteContainer {
+  border: 10px solid rgb(51, 51, 51);
+  background: rgb(194, 203, 241);
+  background: radial-gradient(circle, rgb(194, 203, 241) 0%, rgb(122, 133, 226) 48%, rgba(230, 77, 77, 0.9791193008) 100%);
+  width: 180px;
 }
-.optionsList .option {
+.spriteContainer img {
   width: 100%;
 }
 
-button {
-  background-color: #c7a008;
-  font-family: "Pokemon-Solid";
-  text-decoration: none;
-  color: #ff0000;
-  text-transform: capitalize;
-  font-size: 20px;
+.gameTitle {
   text-align: center;
-  line-height: 29px;
-  letter-spacing: 3px;
-  padding: 5px 0;
-  transition: 0.7s ease;
+  font-size: 2rem;
+}
+
+.nameTitle {
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 1.3;
+  margin-bottom: 2rem;
+}
+
+.quizOptions {
+  list-style-type: none;
+  margin: 1rem;
+}
+.quizOptions li {
+  border-radius: 0.5rem;
+  font-weight: 600;
+  margin: 0.7rem 0;
+  padding: 0.4rem 1.2rem;
   cursor: pointer;
+  border: 3px solid #ffcb05;
+  background-color: #ffcb05;
+  color: black;
+  box-shadow: 0 4px 0 0 #c7a008;
+  transition: all 300ms ease-in-out;
 }
-button:hover {
-  color: #ff0000;
+.quizOptions:hover {
+  color: #2a75bb;
 }
-button:focus {
-  color: #cc0000;
+.quizOptions:active {
+  transform: scale(0.97);
+}
+
+.quizFooter button {
+  border: none;
+  border-radius: 0.5rem;
+  outline: 0;
+  font-family: "game-text";
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  margin: 0 auto;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: block;
+  background-color: #79ac4c;
+  color: black;
+  letter-spacing: 2px;
+  transition: all 300ms ease-in-out;
+  box-shadow: 0 4px 0 0 #008000;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 html {
   font-size: 62.5%;
 }
 
+body {
+  font-family: "game-text";
+  min-height: 100vh;
+}
+
 .flexContainer {
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .wrapper {
