@@ -22,54 +22,16 @@
       <div class="headerText wrapper">
         <h1>Name the Pokemon quiz!</h1>
       </div>
-      <div class="contentContainer">
-        <!-- <img
-          src="./assets/placeHolderSprites/jolteon.png"
-          alt="a jolteon placeholder image"
-        /> -->
-        <div class="dropdownMenu">
-          <select name="generationSelection" id="dropdown">
-            <option>Generation 1 - 1 to 151 Pokemon</option>
-            <option>Generation 2 - 151 to 252 Pokemon</option>
-            <option>Generation 3 - 252 to 386 Pokemon</option>
-          </select>
-        </div>
-        <!-- <img
-          src="./assets/placeHolderSprites/vaporeon.png"
-          alt="a vaporeon placeholder image"
-        /> -->
-      </div>
     </section>
-    <section class="gameBackground flexContainer">
-      <div class="pokeWrapper">
-        <div class="quizContainer ">
-          <div class="pokedexHeader">
-            <h2 class="gameTitle">Who's that Pokemon?</h2>
-          
-          </div>
-            <div class="spriteContainer">
-              <!-- <img src="./assets/placeHolderSprites/worturtle.png" alt="I love turtles"> -->
-              <!-- generated image goes here, remember to remove placeholder image. -->
-            </div>
-            <div class="quizBody">
-              <h2 class="nameTitle">Match the name to the picture.</h2>
-              <ul class="quizOptions">
-                <!-- <li>Snorlax</li>
-                <li>Warturtle</li>
-                <li>Venomoth</li>
-                <li>Mankey</li> -->
-                <!-- generated choices go here -->
-              </ul>
-              <div id="result"></div>
-              <!-- results display above -->
-            </div>
-          </div>
-          <div class="quizFooter">
-            <!-- <button type="button" id="submitAnswer" class="submitAnswer">Submit selection</button> -->
-          </div>
-        </div>
-      </div>
+    <section class="dropdownMenu wrapper">
+      
+      <input type="range" id="difficultyRange" name="difficultyRange"
+             min="25" max="493" step="10" class="difficultyRange">
+      <label for="difficultySlider">Difficulty Slider</label>
+      
+      <a href="./quiz.html"><button class="pokeBallButton">GO</button></a>
     </section>
+
     <script src="./scripts/app.js"></script>
   </body>
 </html>
