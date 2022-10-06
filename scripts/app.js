@@ -24,9 +24,92 @@
         
     };
 
+    //this function should run only after all the markups have been filled
+    pokeApp.runGame=function(){
+      //figure out a correct answer
+      const randomCorrectAnswer = Math.floor(Math.random()*4);
+      // console.log(randomCurrentAnswer);
+
+      //now we gotta get all the buttons inside the quizOptions list, the code below should give us a nodelist of 4 elements.
+      const buttonList = document.querySelectorAll(".quizOptions button"); 
+      
+      //correct button is going to be the randomCurrentAnswer index of that nodelist
+      const correctAnswerButton = buttonList[randomCorrectAnswer];
+      const correctPokemon = correctAnswerButton.textContent;
+//      console.log(correctPokemon);
+
+      //now that we have the correct answer here we will find its image and put it in the imageContainer
+      pokeApp.pokeArray.forEach((item)=>{
+        //so for each item in pokeArray check if its name is the same as correctPokemon
+        //if yes then display its picture 
+        if(item.name == correctPokemon){
+          //now we know that this is the right item so we will select its isCorrect to true and use its picture
+          item.isCorrect = true;
+          
+          //get the imageContainer
+          const spriteContainer = document.querySelector(".spriteContainer");
+          const correctImg = document.createElement('img');
+          correctImg.src=item.image;
+          //after we are done we gotta fill in the code below with its alt text which will be a mixture of type and abilities, attacks, something a combination
+          //correctImg.alt="";
+          spriteContainer.appendChild(correctImg);
+
+        }
+      });
+
+
+
+      //NOW that everything has added lets setup the eventListeners
+      buttonList.forEach((item)=>{
+        //add an event listener for click events
+        item.addEventListener('click',pokeApp.checkAnswer);
+      });
+    };
+
+    //reset function called after the click has been done
+    pokeApp.reset =function(){
+      //empty the array and all the list elements
+      const quizOptions = document.querySelector(".quizOptions");
+      const spriteContainer = document.querySelector(".spriteContainer");
+      quizOptions.innerHTML="";
+      spriteContainer.innerHTML="";
+
+      pokeApp.pokeArray=[];
+    };
+
+    pokeApp.checkAnswer=function(e){
+      // console.log(this.textContent);
+      const selectedPokemon = this.textContent;
+
+      //we go back to pokeapp.pokearray and findout if this pokemon has a isCorrect set to true. 
+
+      pokeApp.pokeArray.forEach((item)=>{
+        if(item.name==selectedPokemon){
+          if(item.isCorrect){
+            console.log('rightAnswer');
+          }
+          else{
+            console.log("wrongAnswer");
+          }
+          
+        }
+      });
+      pokeApp.reset();
+      pokeApp.populate();
+    };
+      
       pokeApp.fillMarkups = function (){
         pokeApp.pokeArray.forEach((item) => {
-            console.log(item);
+            // console.log(item);
+            //create a button for each item
+            const optionButton  =  document.createElement("button");
+            //add the text here
+            optionButton.textContent = item.name;
+            //maybe add a class later here
+
+            //add this button to the ul with a class quizOptions
+            const quizOptions = document.querySelector(".quizOptions");
+            quizOptions.appendChild(optionButton);
         });
       };
       
@@ -34,6 +117,7 @@
     pokeApp.populate = function(){
         const indexes = [];
       for (i = 1; i <= 4; i++) {
+        //this is flawed because it can generate the same pokemon number twice...134.4  and 134.5  will both result in vaporeon. Screenshot saved
         const num = Math.ceil(Math.random() * 150);
         indexes.push(num);
       }
@@ -49,16 +133,12 @@
               .then((data) => {
                 pokeApp.saveNameAndImage(data);
                 if(pokeApp.pokeArray.length==4){
-                    pokeApp.fillMarkups(pokeApp.pokeArray);
+                    pokeApp.fillMarkups();
+                    //now that the markups are filled, every option so wrong, lets select a correct answer and then set up the game accordingly
+                    pokeApp.runGame();
                   };
               }); 
-              //pokeApp.pokeArray needs data from the website to fill but the code below does not need that array to have data. so right now the length is still 0. The data hasn't come  yet. How do we make sure that the data is in? We move this statement inside the .then -> coz at some point we know that that array is going to end up being filled inside that bracket. 
-              // if(pokeApp.pokeArray.length==4){
-              //   pokeApp.fillMarkups(pokeApp.pokeArray);
-              // };
-              
           }
-        
     };
     
 
