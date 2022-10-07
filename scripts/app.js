@@ -126,7 +126,7 @@
     pokeApp.populate = function(){
         const indexes = [];
       for (i = 1; i <= 4; i++) {
-        console.log("Range",pokeApp.range);
+        // console.log("Range",pokeApp.range);
         //this is flawed because it can generate the same pokemon number twice...134.4  and 134.5  will both result in vaporeon. Screenshot saved
         const num = Math.ceil(Math.random() * 150);
 
