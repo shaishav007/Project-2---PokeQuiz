@@ -5,6 +5,8 @@
     flex-direction: column  ;
     justify-content: center;
     align-items: center;
+    height: 40vw;
+    
     .headerText{
         font-family: $solidFont;
         text-transform: capitalize;
@@ -15,6 +17,7 @@
         top: 140px;
         color: $pokemonYellow;
         text-shadow: -1.5px -1.5px 0 $pokemonBlueLight, 1.5px -1.5px 0 $pokemonBlueLight, -1px 2px 0 $pokemonBlueLight, 1px 2px 0 $pokemonBlueLight;
+        text-align: center;
     }
     .contentContainer{
         max-width: 75%;
@@ -24,14 +27,51 @@
            height: auto; 
         }
         .dropdownMenu{
+            width: 50vw;
             select{
                 background-color: $pokemonYellowShadow;
                 font-family: $solidFont;
                 font-size: 24px;
                 
             }
-            position: relative;
-            display: inline-block
+            
+
+            
         }
+    }
+
+    
+}
+
+.difficultyRange{
+    height: 10vw;
+    width: 100%;
+    &::-moz-range-thumb{
+        width: 10rem;
+        height: 10rem;
+        background:url(../assets/placeHolderSprites/snorlax.png);
+        background-size: contain;
+        border: none;
+    }
+
+    &::-moz-range-track{
+        width: 100%;
+        height: 0.5rem;
+        background: #205928;
+    }
+}
+.pokeBallButton{
+    display: block;
+    margin: 0 auto;
+    padding: 5vw;
+    font-size: 2rem;
+    background: url(../assets/placeHolderSprites/pokeball.jpg);
+    background-size: contain;
+    border: none;
+    color: white;
+    transition: 0.1s;
+
+    &:active{
+        transform: scale(1.2);
     }
 }

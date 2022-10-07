@@ -7,6 +7,7 @@
     pokeApp.pokeArray = new Array();
     // we need to populate pokeArray with objects that have a name and image associated with them.
     
+
     pokeApp.init = function(){
         // first, we fetch pokemon and populate the elements
         pokeApp.populate();
@@ -115,13 +116,29 @@
         const data = await response.json();
         return data;
       };
+    
+    //PokeApp range 
+    // pokeApp.range = document.querySelector('.difficultyRange').value;
+    
     // writing the function to populate the image and four options.
+
+    
     pokeApp.populate = function(){
         const indexes = [];
       for (i = 1; i <= 4; i++) {
+        // console.log("Range",pokeApp.range);
         //this is flawed because it can generate the same pokemon number twice...134.4  and 134.5  will both result in vaporeon. Screenshot saved
         const num = Math.ceil(Math.random() * 150);
-        indexes.push(num);
+
+        //stop repeating numbers code
+        //if the index array so far already has num then this i is wasted so i--
+        if(indexes.includes(num)){
+          i--;
+        }
+        else{
+          //this means that num is not in the index so lets add it
+          indexes.push(num);
+        }
       }
 
       pokePromise = [];
