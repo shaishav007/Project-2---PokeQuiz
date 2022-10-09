@@ -5,6 +5,8 @@
 @use "./partials/header";
 @use "./partials/difficultySection";
 @use "./partials/gameSection";
+@use "./partials/contactPage";
+@use "./partials/footer";
 
 * {
     padding: 0;
@@ -18,7 +20,7 @@ html{
 
 body {
     font-family: $bodyFont;
-    min-height: 100vh;
+    // min-height: 100vh;
 }
 
 .flexContainer{
