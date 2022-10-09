@@ -68,6 +68,14 @@
       pokeApp.pokeArray=[];
     };
 
+    //PLAY the audio of the correct Pokemon
+    pokeApp.playText = function (pokeMon){
+      const description = pokeMon.descriptionText;
+      const utterance = new SpeechSynthesisUtterance(description);
+      utterance.rate = 1;
+      speechSynthesis.speak(utterance);
+    }
+
     pokeApp.checkAnswer=function(e){
       // console.log(this.textContent);
       const selectedPokemon = this.textContent;
@@ -82,18 +90,31 @@
           else{
             console.log("wrongAnswer");
           }
+
+          
           //find the image and set the brightness to 1
           const img = document.querySelector(".spriteContainer img");
           img.style.filter=`brightness(1)`;
+        }
+        
+        //pokedex entry for the correct answer
+        if(item.isCorrect){
+          pokeApp.playText(item);
         }
       });
       //add a timeout before it resets
       setTimeout(() => {
         pokeApp.reset();
         pokeApp.populate();
-      },1000);
+      },3000);
       
     };
+
+    pokeApp.makePokedexAppear = function(e){
+      const pokedexContainer = document.querySelector('.pokedex');
+
+      pokedexContainer.classList.toggle("open");
+    }
       
       pokeApp.fillMarkups = function (){
         pokeApp.pokeArray.forEach((item) => {
@@ -108,6 +129,9 @@
             const quizOptions = document.querySelector(".quizOptions");
             quizOptions.appendChild(optionButton);
         });
+
+        const pokeDexButton = document.querySelector('.submitAnswer');
+        pokeDexButton.addEventListener('click',pokeApp.makePokedexAppear);
       };
       
        pokeApp.getThePokemon = async function(url){
@@ -117,6 +141,13 @@
         return data;
       };
     
+      //get the description
+      pokeApp.getDescription = async function(url){
+        //write the fetch request
+        const response = await fetch(url);
+        const data = await response.json();
+        return data;
+      };
     //PokeApp range 
     // pokeApp.range = document.querySelector('.difficultyRange').value;
     
@@ -142,6 +173,7 @@
       }
 
       pokePromise = [];
+      
         for (i = 1; i <= 4; i++) {
             
             let pokeURL = "https://pokeapi.co/api/v2/pokemon/";
@@ -149,6 +181,8 @@
 
             //call an async function that has fetch functionality
             pokePromise.push(pokeApp.getThePokemon(pokeURL));
+
+          
             
           }
           //pending promises been saved in the array pokePromise
@@ -163,7 +197,9 @@
                       pokeApp.pokeArray.push({
                         'name':item.name,
                         'image':item.sprites.front_default,
-                        'isCorrect':false
+                        'isCorrect':false,
+                        'type':item.types[0].type.name,
+                        'descriptionText':`${item.name}, ${item.types[0].type.name} type pokemon, loves to eat `
                       });
                     });
                     //our array is filled now fill buttons and image
@@ -172,6 +208,8 @@
                     //run the game
                     pokeApp.runGame();
                   });
+          
+        
     };
     
 
