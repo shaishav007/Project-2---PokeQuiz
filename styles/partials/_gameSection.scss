@@ -10,77 +10,79 @@
     border-bottom-right-radius: 1.5rem;
     // position: relative;
     box-shadow: 0 4px 6px rgb(0 0 0 /10%), 0 1px 3px rgb(0 0 0 / 10%);
-  }
+    
+    
 
-.quizContainer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+  .quizContainer{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
-  .spriteContainer{
-    border: 10px solid rgb(51, 51, 51);
-    background: rgb(194,203,241);
-    background: radial-gradient(circle, rgba(194,203,241,1) 0%, rgba(122,133,226,1) 48%, rgba(230,77,77,0.9791193008422852) 100%); 
-    // background: rgb(241, 241, 241);
-    // background: radial-gradient(
-    //     circle,
-    //     rgba(241, 241, 241, 1) 1%,
-    //     rgba(42, 117, 187, 1) 30%,
-    //     rgba(232, 0, 13, 1) 91%
-    // );
-    // width: clamp(10rem, 15vw, 35rem);
-    width: 180px;
-    img {
-        width: 100%;
-        filter:brightness(0);
-    }
-  }
-
-  .gameTitle{
-    text-align: center;
-    font-size: 2rem;
-  }
-
-  .nameTitle{
-    font-size: 1.2rem;
-  text-align: center;
-  line-height: 1.3;
-  margin-bottom: 2rem;
-  }
-
-  .quizOptions{
-    list-style-type: none;
-    margin: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-
-    button {
-        border-radius: 0.5rem;
-        font-weight: 600;
-        width: 40%;
-        margin: 0.7rem 1rem;
-        padding: 0.4rem 1.2rem;
-        
-        cursor: pointer;
-        border: 3px solid $pokemonYellow;
-        background-color: $pokemonYellow;
-        color: black;
-        box-shadow: 0 4px 0 0 $pokemonYellowShadow;
-        transition: all 300ms ease-in-out;
-        &:hover {
-          color: $pokemonBlueLight;
-          ;
-        }
-        &:active {
-          transform: scale(0.97);
-        }
-      }
       
   }
 
-  .quizFooter {
-    button {
+    .spriteContainer{
+      border: 10px solid rgb(51, 51, 51);
+      background: rgb(194,203,241);
+      background: radial-gradient(circle, rgba(194,203,241,1) 0%, rgba(122,133,226,1) 48%, rgba(230,77,77,0.9791193008422852) 100%); 
+      // background: rgb(241, 241, 241);
+      // background: radial-gradient(
+      //     circle,
+      //     rgba(241, 241, 241, 1) 1%,
+      //     rgba(42, 117, 187, 1) 30%,
+      //     rgba(232, 0, 13, 1) 91%
+      // );
+      // width: clamp(10rem, 15vw, 35rem);
+      width: 180px;
+      img {
+          width: 100%;
+          filter:brightness(0);
+      }
+    }
+
+    .gameTitle{
+      text-align: center;
+      font-size: 2rem;
+    }
+
+    .nameTitle{
+      font-size: 1.2rem;
+    text-align: center;
+    line-height: 1.3;
+    margin-bottom: 2rem;
+    }
+
+    .quizOptions{
+      list-style-type: none;
+      margin: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+
+      button {
+          border-radius: 0.5rem;
+          font-weight: 600;
+          width: 40%;
+          margin: 0.7rem 1rem;
+          padding: 0.4rem 1.2rem;
+          
+          cursor: pointer;
+          border: 3px solid $pokemonYellow;
+          background-color: $pokemonYellow;
+          color: black;
+          box-shadow: 0 4px 0 0 $pokemonYellowShadow;
+          transition: all 300ms ease-in-out;
+          &:hover {
+            color: $pokemonBlueLight;
+            ;
+          }
+          &:active {
+            transform: scale(0.97);
+          }
+        }
+        
+    }
+
+  .submitAnswer{
         border: none;
         border-radius: 0.5rem;
         outline: 0;
@@ -97,5 +99,28 @@
         letter-spacing: 2px;
         transition: all 300ms ease-in-out;
         box-shadow: 0 4px 0 0 $pokemonGreenDark;
-      }
+
+        
+        &:active{
+          color: darkgray;
+        }
   }
+
+ 
+  .pokedex{
+    position: sticky;
+    height: 20vw;
+    width: 20vw;
+    z-index: -1;
+    background-color: gray;
+    transition-duration: 0.2s;
+    bottom: 100%;
+    // transform: rotate3d(0,1,0,-180deg);
+
+    
+  }
+
+  .open{
+    transform:translateX(100%);
+  }
+}
