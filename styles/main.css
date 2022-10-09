@@ -237,10 +237,6 @@ html {
 .gameBackground {
   width: 100%;
   min-height: 86vh;
-  background: rgb(6, 103, 4);
-  background: linear-gradient(0deg, rgb(6, 103, 4) 0%, rgb(8, 91, 5) 2%, rgb(8, 91, 5) 4%, rgb(11, 76, 6) 5%, rgb(12, 65, 7) 7%, rgb(11, 74, 6) 11%, rgb(13, 60, 7) 13%, rgb(15, 75, 8) 15%, rgb(8, 91, 5) 17%, rgb(17, 85, 9) 17%, rgb(7, 95, 5) 17%, rgb(17, 88, 9) 19%, rgb(14, 71, 8) 20%, rgb(12, 63, 7) 22%, rgb(17, 85, 9) 24%, rgb(15, 80, 8) 26%, rgb(17, 93, 9) 29%, rgb(19, 102, 10) 31%, rgb(18, 97, 10) 33%, rgb(20, 110, 10) 34%, rgb(21, 117, 11) 36%, rgb(21, 117, 11) 37%, rgb(21, 124, 11) 38%, rgb(23, 142, 12) 41%, rgb(29, 110, 12) 45%, rgb(66, 73, 15) 47%, rgb(161, 104, 12) 51%, rgb(232, 240, 48) 52%, rgb(237, 204, 93) 52%, rgb(205, 204, 60) 53%, rgb(173, 204, 26) 56%, rgb(126, 188, 122) 58%, rgb(79, 172, 217) 64%, rgb(57, 179, 242) 69%, rgb(71, 175, 226) 72%, rgb(106, 163, 186) 74%, rgb(141, 151, 145) 78%, rgb(183, 137, 96) 80%, rgb(247, 116, 21) 83%, rgb(243, 114, 20) 87%, rgb(246, 116, 21) 89%, rgb(246, 116, 21) 90%, rgb(233, 108, 17) 93%, rgb(209, 94, 11) 95%, rgb(202, 90, 9) 98%, rgb(182, 78, 3) 100%);
-  /****Pokeball Gradient****/
-  /*****************************/
 }
 
 .dropdownSection {
@@ -364,13 +360,28 @@ nav a:focus {
   border-bottom-left-radius: 1.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);
 }
-.pokeWrapper .quizContainer {
+
+.quizContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.spriteContainer {
+  border: 10px solid rgb(51, 51, 51);
+  background: rgb(194, 203, 241);
+  background: radial-gradient(circle, rgb(194, 203, 241) 0%, rgb(122, 133, 226) 48%, rgba(230, 77, 77, 0.9791193008) 100%);
+  width: 180px;
+}
+.spriteContainer img {
+  width: 100%;
+  filter: brightness(0);
+}
 
+.gameTitle {
+  text-align: center;
+  font-size: 2rem;
+}
 
 .screenBorder {
   background-color: lightgray;
@@ -414,13 +425,45 @@ nav a:focus {
   width: 300px;
   height: 240px;
 }
-.pokeWrapper .spriteContainer img {
+.spriteContainer img {
   width: 100%;
   height: auto;
   padding: 25px;
   filter: brightness(0);
 }
 
+.nameTitle {
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 1.3;
+  margin-bottom: 2rem;
+}
+
+.quizOptions {
+  list-style-type: none;
+  margin: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.quizOptions button {
+  border-radius: 0.5rem;
+  font-weight: 600;
+  width: 40%;
+  margin: 0.7rem 1rem;
+  padding: 0.4rem 1.2rem;
+  cursor: pointer;
+  border: 3px solid #ffcb05;
+  background-color: #ffcb05;
+  color: black;
+  box-shadow: 0 4px 0 0 #c7a008;
+  transition: all 300ms ease-in-out;
+}
+.quizOptions button:hover {
+  color: #2a75bb;
+}
+.quizOptions button:active {
+  transform: scale(0.97);
+}
 
 .pokedexHeader .pokedexLights ul {
   list-style: none;
@@ -462,25 +505,26 @@ nav a:focus {
   margin-left: 21px;
   list-style: none;
 }
-.pokedexHeader .gameTitle {
-
+.pokedexHeader .pokedexLights .gameTitle {
   text-align: center;
   font-size: 2.5rem;
   margin: 2rem 0;
 }
-.pokeWrapper .nameTitle {
+
+.nameTitle {
   font-size: 1.2rem;
   text-align: center;
   line-height: 1.3;
   margin: 2rem 0;
 }
-.pokeWrapper .quizOptions {
+
+.quizOptions {
   list-style-type: none;
   margin: 1rem;
   display: flex;
   flex-wrap: wrap;
 }
-.pokeWrapper .quizOptions button {
+.quizOptions button {
   border-radius: 0.5rem;
   font-family: "game-text";
   text-transform: capitalize;
@@ -494,13 +538,26 @@ nav a:focus {
   box-shadow: 0 4px 0 0 #c7a008;
   transition: all 300ms ease-in-out;
 }
-.pokeWrapper .quizOptions button:hover {
+.quizOptions button:hover {
   color: #2a75bb;
 }
-.pokeWrapper .quizOptions button:active {
-  transform: scale(0.97);
+
+.pokedex {
+  position: -webkit-sticky;
+  position: sticky;
+  height: 20vw;
+  width: 20vw;
+  z-index: -1;
+  background-color: gray;
+  transition-duration: 0.2s;
+  bottom: 100%;
 }
-.pokeWrapper .submitAnswer {
+
+.open {
+  transform: translateX(100%);
+}
+
+.submitAnswer {
   border: none;
   border-radius: 0.5rem;
   outline: 0;
@@ -518,21 +575,8 @@ nav a:focus {
   transition: all 300ms ease-in-out;
   box-shadow: 0 4px 0 0 #008000;
 }
-.pokeWrapper .submitAnswer:active {
+.submitAnswer:active {
   color: darkgray;
-}
-.pokeWrapper .pokedex {
-  position: -webkit-sticky;
-  position: sticky;
-  height: 20vw;
-  width: 20vw;
-  z-index: -1;
-  background-color: gray;
-  transition-duration: 0.2s;
-  bottom: 100%;
-}
-.pokeWrapper .open {
-  transform: translateX(100%);
 }
 
 .contactPage {
