@@ -18,32 +18,55 @@
       </nav>
       <!-- .navBar ends -->
     </header>
-    
+
     <section class="gameBackground flexContainer">
       <div class="pokeWrapper">
-        
-        <div class="quizContainer ">
+        <div class="quizContainer">
+
           <div class="pokedexHeader">
-            <h2 class="gameTitle">Who's that Pokemon?</h2>
-          
-          </div>
-            <div class="spriteContainer">
-              <!-- <img src="./assets/placeHolderSprites/worturtle.png" alt="I love turtles"> -->
-              <!-- generated image goes here, remember to remove placeholder image. -->
+            <div class="pokedexLights">
+              <ul>
+                <li class="blueCircle"></li>
+                <li class="redCircle"></li>
+                <li class="yellowCircle"></li>
+                <li class="greenCircle"></li>
+              </ul>
             </div>
-            <div class="quizBody">
-              <h2 class="nameTitle">Match the name to the picture.</h2>
+            <!-- <span class="greenCircle" /> -->
+            <h2 class="gameTitle">Who's that Pokemon?</h2>
+          </div>
+          <div class="screenBorder">
+            <div class="spriteContainer">
+              <!-- generated image goes here. -->
+            </div>
+            <div class="screenFooter">
+              <div class="lightContainer">
+                <ul>
+                  <li class="redCircle"></li>
+                </ul>
+              </div>
+              <div class="speakerContainer">
+                <div class="speaker">
+                  <span class="bar"></span>
+                  <span class="bar"></span>
+                  <span class="bar"></span>
+                  <span class="bar"></span>
+                  <span class="bar"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="quizBody">
+            <h2 class="nameTitle">Match the name to the picture.</h2>
+            <div class="buttonContainer">
               <ul class="quizOptions">
-                <!-- <li>Snorlax</li>
-                <li>Warturtle</li>
-                <li>Venomoth</li>
-                <li>Mankey</li> -->
                 <!-- generated choices go here -->
               </ul>
-              <div id="result"></div>
-              <!-- results display above -->
             </div>
+            <div id="result"></div>
+            <!-- results display above -->
           </div>
+
           <div class="quizFooter">
             <button type="button" id="pokeDex" class="submitAnswer">pokeDex</button>
           </div>
@@ -53,9 +76,17 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quisquam vitae vero et neque? Aliquid qui earum consequatur possimus cumque.</p>
           </div>
         
+
+
         </div>
       </div>
     </section>
+
+    <footer>
+      <p>Data courtesy of the <a href="https://pokeapi.co/">the PokeAPI</a></p>
+
+      <p>Copyright <a href="https://junocollege.com/">Juno Collge 2022</a></p>
+    </footer>
     <script src="./scripts/app.js"></script>
   </body>
 </html>
