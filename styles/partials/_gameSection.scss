@@ -2,71 +2,58 @@
 
 
 .pokeWrapper {
-    background-color: $pokemonRed;
-    border-style: groove;
-    padding: 1.5rem 4rem 3rem 4rem;
-    width: 420px;
-    height: 690px;
-    margin: 2rem 0;
-    border-top-left-radius: 1.5rem;
-    border-bottom-left-radius: 1.5rem;
-    // position: relative;
-    box-shadow: 0 4px 6px rgb(0 0 0 /10%), 0 1px 3px rgb(0 0 0 / 10%);
-}    
+  background-color: $pokemonRed;
+  border-style: groove;
+  padding: 1.5rem 4rem 3rem 4rem;
+  width: 420px;
+  height: 690px;
+  margin: 2rem 0;
+  border-top-left-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
+  box-shadow: 0 4px 6px rgb(0 0 0 /10%), 0 1px 3px rgb(0 0 0 / 10%);
+  @media (width: 405px) {
     
+  }
+}
 
 .quizContainer{
-      display: flex;
-      flex-direction: column;
-      align-items: center;   
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-    .spriteContainer{
-      border: 10px solid rgb(51, 51, 51);
-      background: rgb(194,203,241);
-      background: radial-gradient(circle, rgba(194,203,241,1) 0%, rgba(122,133,226,1) 48%, rgba(230,77,77,0.9791193008422852) 100%); 
-      // background: rgb(241, 241, 241);
-      // background: radial-gradient(
-      //     circle,
-      //     rgba(241, 241, 241, 1) 1%,
-      //     rgba(42, 117, 187, 1) 30%,
-      //     rgba(232, 0, 13, 1) 91%
-      // );
-      // width: clamp(10rem, 15vw, 35rem);
-      width: 180px;
-      img {
-          width: 100%;
-          filter:brightness(0);
-      }
-    }
-
-
-.gameTitle{
-  text-align: center;
-  font-size: 2rem;
-}
 .screenBorder{
-    background-color: lightgray;
-  border: 10px  ridge lightgray;
-  
-  border-radius: 1.5rem;
-  height: 295px;
+  background-color: lightgray;
+border: 10px  ridge lightgray;
+border-radius: 1.5rem;
+height: 295px;
   .screenFooter{
     display: flex;
     justify-content: space-between;
+  }
+  .counter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 35px;
+    height: 35px;
+    background-color: lightblue;
+    color: rebeccapurple;
+    border: 2px solid black;
   }
   .speakerContainer{
     display: flex;
     justify-content: end;
     padding-right: 2rem;
     max-width: 40px;
-    .bar{
-      display: block;
-      width: 40px;
-      height: 2px;
-      margin: 5px auto;
-      background-color: black;
-    }
+      .bar{
+        display: block;
+        width: 40px;
+        height: 2px;
+        margin: 5px auto;
+        background-color: black;
+      }
   }
   .redCircle{
     background-color: $pokemonRedShadow;
@@ -76,204 +63,184 @@
     border: 1px solid;
     margin: 10px;
     // margin-left: 21px;
-   list-style: none;
+  list-style: none;
+  }
 }
+
+.spriteContainer{
+  display: flex;
+  align-items: center;
+  border: 5px inset;
+  background: rgb(194,203,241);
+  background: radial-gradient(circle, rgb(229, 231, 242) 0%, rgba(122,133,226,1) 48%, rgba(230,77,77,0.9791193008422852) 100%); 
+  width: 300px;
+  height: 240px;
+  img {
+      width: 100%;
+      height: auto;
+      padding: 25px;
+      filter:brightness(0);
+  }
   
 }
 
-  .spriteContainer{
-    display: flex;
-    align-items: center;
-    border: 5px inset;
-    background: rgb(194,203,241);
-    background: radial-gradient(circle, rgb(229, 231, 242) 0%, rgba(122,133,226,1) 48%, rgba(230,77,77,0.9791193008422852) 100%); 
-    // background: rgb(241, 241, 241);
-    // background: radial-gradient(
-    //     circle,
-    //     rgba(241, 241, 241, 1) 1%,
-    //     rgba(42, 117, 187, 1) 30%,
-    //     rgba(232, 0, 13, 1) 91%
-    // );
-    // width: clamp(10rem, 15vw, 35rem);
-    width: 300px;
-    height: 240px;
-    img {
-        width: 100%;
-        height: auto;
-        padding: 25px;
-        filter:brightness(0);
-
-    }
-  }
-
-  .nameTitle{
-      font-size: 1.2rem;
-    text-align: center;
-    line-height: 1.3;
-    margin-bottom: 2rem;
-  }
-
-    .quizOptions{
-      list-style-type: none;
-      margin: 1rem;
+.pokedexHeader{
+  .pokedexLights{
+    ul{
+      list-style: none;
       display: flex;
-      flex-wrap: wrap;
-
-      button {
-          border-radius: 0.5rem;
-          font-weight: 600;
-          width: 40%;
-          margin: 0.7rem 1rem;
-          padding: 0.4rem 1.2rem;
-          
-          cursor: pointer;
-          border: 3px solid $pokemonYellow;
-          background-color: $pokemonYellow;
-          color: black;
-          box-shadow: 0 4px 0 0 $pokemonYellowShadow;
-          transition: all 300ms ease-in-out;
-          &:hover {
-            color: $pokemonBlueLight;
-            ;
-          }
-          &:active {
-            transform: scale(0.97);
-          }
-        }
+      justify-content: flex-start;
+      // margin: 0 auto;
+      // padding-left: 0;
     }
-
-  .pokedexHeader{
-    .pokedexLights{
-      ul{
-        list-style: none;
-        display: flex;
-        justify-content: flex-start;
-        // margin: 0 auto;
-        // padding-left: 0;
-      }
-      .blueCircle{
-        background-color: $pokemonBlueShadow;
-        height: 50px;
-        width: 50px;
-        border-radius: 50%;
-        list-style: none;
-        border: 1px solid;
-      }
-      .redCircle{
-        background-color: $pokemonRedShadow;
-        height: 15px;
-        width: 15px;
-        border-radius: 50%;
-        border: 1px solid;
-        margin-left: 21px;
-       list-style: none;
-      }
-    .yellowCircle{
-      background-color: $pokemonYellowShadow;
-        height: 15px;
-        width: 15px;
-        border-radius: 50%;
-        border: 1px solid;
-        margin-left: 21px;
-       list-style: none;
+    .blueCircle{
+      background-color: $pokemonBlueShadow;
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      list-style: none;
+      border: 1px solid;
     }
-    .greenCircle{
-      background-color: $pokemonGreenDark;
-        height: 15px;
-        width: 15px;
-        border-radius: 50%;
-        border: 1px solid;
-        margin-left: 21px;
-       list-style: none;
+    .redCircle{
+      background-color: $pokemonRedShadow;
+      height: 15px;
+      width: 15px;
+      border-radius: 50%;
+      border: 1px solid;
+      margin-left: 21px;
+     list-style: none;
+  }
+  .yellowCircle{
+    background-color: $pokemonYellowShadow;
+      height: 15px;
+      width: 15px;
+      border-radius: 50%;
+      border: 1px solid;
+      margin-left: 21px;
+     list-style: none;
+  }
+  .greenCircle{
+    background-color: $pokemonGreenDark;
+      height: 15px;
+      width: 15px;
+      border-radius: 50%;
+      border: 1px solid;
+      margin-left: 21px;
+     list-style: none;
+  }
+  }
+  .gameTitle{
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 2rem 0;
+  }
+}
+
+
+
+.nameTitle{
+  font-size: 1.2rem;
+text-align: center;
+line-height: 1.3;
+margin: 2rem 0;
+}
+.quizOptions{
+  list-style-type: none;
+  margin: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  button {
+      border-radius: 0.5rem;
+      // font-weight: 600;
+      font-family: $bodyFont;
+      text-transform: capitalize;
+      // font-size: ;
+      width: 40%;
+      margin: 0.7rem 1rem;
+      padding: 0.4rem 1.2rem;
+      cursor: pointer;
+      border: 3px ridge $pokemonYellow;
+      background-color: $pokemonYellow;
+      color: black;
+      box-shadow: 0 4px 0 0 $pokemonYellowShadow;
+      transition: all 300ms ease-in-out;
+      &:hover {
+        color: $pokemonBlueLight;
+        ;
+      }
+      &:active {
+        transform: scale(0.97);
+      }
     }
     
-    .gameTitle{
-      text-align: center;
-      font-size: 2.5rem;
-      margin: 2rem 0;
+}
+
+.quizFooter {
+  // display: flex;
+  button {
+    // margin: 0.7rem 1rem;
+      border-radius: 0.5rem;
+      outline: 0;
+      font-family: $bodyFont;
+      font-size: 1.2rem;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      margin: 0 auto;
+      text-transform: uppercase;
+      border: 3px ridge black;
+      cursor: pointer;
+      background-color: $pokemonGreen;
+      color: black;
+      letter-spacing: 2px;
+      transition: all 300ms ease-in-out;
+      box-shadow: 0 4px 0 0 $pokemonGreenDark;
     }
-    }
-  }
+}
 
-  
-
-  .nameTitle{
-    font-size: 1.2rem;
-  text-align: center;
-  line-height: 1.3;
-  margin: 2rem 0;
-  }
-  .quizOptions{
-    list-style-type: none;
-    margin: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    button {
-        border-radius: 0.5rem;
-        // font-weight: 600;
-        font-family: $bodyFont;
-        text-transform: capitalize;
-        // font-size: ;
-        width: 40%;
-        margin: 0.7rem 1rem;
-        padding: 0.4rem 1.2rem;
-        cursor: pointer;
-        border: 3px ridge $pokemonYellow;
-        background-color: $pokemonYellow;
-        color: black;
-        box-shadow: 0 4px 0 0 $pokemonYellowShadow;
-        transition: all 300ms ease-in-out;
-        &:hover {
-          color: $pokemonBlueLight;
-          ;
-
-        }
-        
-    }
-
-  
+// .submitAnswer{
+//   border: none;
+//   border-radius: 0.5rem;
+//   outline: 0;
+//   font-family: $bodyFont;
+//   font-size: 1.2rem;
+//   font-weight: 600;
+//   padding: 0.5rem 1rem;
+//   margin: 0 auto;
+//   text-transform: uppercase;
+//   cursor: pointer;
+//   display: block;
+//   background-color: $pokemonGreen;
+//   color: black;
+//   letter-spacing: 2px;
+//   transition: all 300ms ease-in-out;
+//   box-shadow: 0 4px 0 0 $pokemonGreenDark;
+//   &:active{
+//     color: darkgray;
+//     }
+//   }
 
  
-  
-  }
-
   .pokedex{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
     position: sticky;
-    height: 20vw;
-    width: 20vw;
+    border: 5px ridge $pokemonRedShadow;
+    height: 345px;
+    width: 420px;
     z-index: -1;
-    background-color: gray;
+    background-color: $pokemonBlueLight;
     transition-duration: 0.2s;
     bottom: 100%;
-    // transform: rotate3d(0,1,0,-180deg);
-
+    text-align: center;
+    p{
+      width: 75%;
+    }
     
   }
 
   .open{
     transform:translateX(100%);
-  }
-  
-  .submitAnswer{
-    border: none;
-    border-radius: 0.5rem;
-    outline: 0;
-    font-family: $bodyFont;
-    font-size: 1.2rem;
-    font-weight: 600;
-    padding: 0.5rem 1rem;
-    margin: 0 auto;
-    text-transform: uppercase;
-    cursor: pointer;
-    display: block;
-    background-color: $pokemonGreen;
-    color: black;
-    letter-spacing: 2px;
-    transition: all 300ms ease-in-out;
-    box-shadow: 0 4px 0 0 $pokemonGreenDark;
-
     
-    &:active{
-      color: darkgray;
-    }
-}
+  }
