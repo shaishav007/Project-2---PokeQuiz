@@ -368,6 +368,7 @@ nav a:focus {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
 }
 
 .screenBorder {
@@ -388,8 +389,8 @@ nav a:focus {
   width: 35px;
   height: 35px;
   background-color: lightblue;
-  color: rebeccapurple;
-  border: 2px solid black;
+  color: black;
+  border: 2px inset black;
 }
 .screenBorder .speakerContainer {
   display: flex;
@@ -530,22 +531,26 @@ nav a:focus {
 
 .pokedex {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   text-align: center;
   align-items: center;
   position: -webkit-sticky;
   position: sticky;
   border: 5px ridge #cc0000;
-  height: 345px;
   width: 420px;
   z-index: -1;
   background-color: #2a75bb;
   transition-duration: 0.2s;
   bottom: 100%;
-  text-align: center;
 }
 .pokedex p {
   width: 75%;
+}
+.pokedex .devContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .open {
