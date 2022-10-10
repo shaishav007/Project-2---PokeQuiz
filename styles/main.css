@@ -323,7 +323,7 @@ nav a:focus {
 
 .difficultyRange {
   height: 10vw;
-  width: 100%;
+  width: 90%;
 }
 .difficultyRange::-moz-range-thumb {
   width: 15rem;
@@ -334,6 +334,24 @@ nav a:focus {
 }
 .difficultyRange::-moz-range-track {
   width: 100%;
+  height: 0.5rem;
+  background: #205928;
+}
+
+.difficultyRangeMini {
+  height: 5vw;
+  width: 80%;
+  background: #ff0000;
+}
+.difficultyRangeMini::-moz-range-thumb {
+  width: 10rem;
+  height: 10rem;
+  background: var(--sliderImg);
+  background-size: contain;
+  border: none;
+}
+.difficultyRangeMini::-moz-range-track {
+  width: 70%;
   height: 0.5rem;
   background: #205928;
 }
@@ -364,6 +382,7 @@ nav a:focus {
   border-top-left-radius: 1.5rem;
   border-bottom-left-radius: 1.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 .quizContainer {
   display: flex;
@@ -551,17 +570,19 @@ nav a:focus {
   justify-content: center;
   text-align: center;
   align-items: center;
-  position: -webkit-sticky;
-  position: sticky;
+  position: absolute;
   border: 5px ridge #cc0000;
   width: 420px;
   z-index: 1;
-  background-color: #2a75bb;
+  background-color: #ff0000;
   transition-duration: 0.2s;
-  bottom: 100%;
+  bottom: 34%;
+  padding: 5%;
 }
 .pokedex p {
   width: 75%;
+  font-size: 1.5rem;
+  margin-block: 2rem;
 }
 .pokedex .devContainer {
   width: 100%;
@@ -569,8 +590,50 @@ nav a:focus {
   justify-content: space-evenly;
 }
 
-.open {
+.openDex {
   transform: translateX(100%);
+}
+
+.settings {
+  position: absolute;
+  border: 5px ridge #cc0000;
+  width: 420px;
+  z-index: 1;
+  background-color: #ff0000;
+  transition-duration: 0.2s;
+  bottom: 10%;
+  padding: 5%;
+}
+
+.openSettings {
+  transform: translateX(-100%);
+}
+
+.innerDisplay {
+  background: green;
+  width: 100%;
+  height: 15rem;
+  border: 10px ridge black;
+  transition-duration: 0.05s;
+  box-shadow: 0px 0px calc(2rem * var(--blurMultiplier)) 0px lightgreen;
+}
+
+.colm, .shaishav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: lightblue;
+  width: 130px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border-radius: 15%;
+}
+.colm a, .shaishav a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 .contactPage {

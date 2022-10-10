@@ -11,6 +11,8 @@
   border-top-left-radius: 1.5rem;
   border-bottom-left-radius: 1.5rem;
   box-shadow: 0 4px 6px rgb(0 0 0 /10%), 0 1px 3px rgb(0 0 0 / 10%);
+
+  position: relative;
   @media (width: 405px) {
     
   }
@@ -245,16 +247,19 @@ margin: 2rem 0;
     justify-content: center;
     text-align: center;
     align-items: center;
-    position: sticky;
+    position: absolute;
     border: 5px ridge $pokemonRedShadow;
     // height: 345px;
     width: 420px;
     z-index: 1;
-    background-color: $pokemonBlueLight;
+    background-color: $pokemonRed;
     transition-duration: 0.2s;
-    bottom: 100%;
+    bottom: 34%;
+    padding: 5%;
     p{
       width: 75%;
+      font-size: 1.5rem;
+      margin-block: 2rem;
     }
     .devContainer{
       width: 100%;
@@ -263,7 +268,47 @@ margin: 2rem 0;
     }
   }
 
-  .open{
+  .openDex{
     transform:translateX(100%);
     
+  }
+
+  .settings{
+    position: absolute;
+    border: 5px ridge $pokemonRedShadow;
+    // height: 345px;
+    width: 420px;
+    z-index: 1;
+    background-color: $pokemonRed;
+    transition-duration: 0.2s;
+    bottom: 10%;
+    padding: 5%;
+  }
+
+  .openSettings{
+    transform:translateX(-100%);
+  }
+  .innerDisplay{
+    background: green;
+    width: 100%;
+    height: 15rem;
+    border:10px ridge black;
+    @include glow(lightgreen,2rem,var(--blurMultiplier));
+  }
+
+  .colm,.shaishav{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: lightblue;
+    width: 130px;
+    height: fit-content;
+    border-radius: 15%;
+    a{
+      color: white;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
   }
