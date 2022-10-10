@@ -358,9 +358,6 @@ nav a:focus {
 }
 
 .pokeWrapper {
-  background-color: #ff0000;
-  border-style: groove;
-  padding: 1.5rem 4rem 3rem 4rem;
   width: 420px;
   height: 690px;
   margin: 2rem 0;
@@ -373,6 +370,11 @@ nav a:focus {
   flex-direction: column;
   align-items: center;
   height: 100%;
+  position: relative;
+  z-index: 10;
+  background-color: #ff0000;
+  border-style: groove;
+  padding: 1.5rem 4rem 3rem 4rem;
 }
 
 .screenBorder {
@@ -553,7 +555,7 @@ nav a:focus {
   position: sticky;
   border: 5px ridge #cc0000;
   width: 420px;
-  z-index: -1;
+  z-index: 1;
   background-color: #2a75bb;
   transition-duration: 0.2s;
   bottom: 100%;
