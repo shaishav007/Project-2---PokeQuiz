@@ -280,6 +280,11 @@ nav a:focus {
   color: #cc0000;
 }
 
+:root {
+  --sliderImg: url("../assets/placeHolderSprites/snorlax.png");
+  --isPlaying:false;
+}
+
 .dropdownSection {
   display: flex;
   flex-direction: column;
@@ -321,9 +326,9 @@ nav a:focus {
   width: 100%;
 }
 .difficultyRange::-moz-range-thumb {
-  width: 10rem;
-  height: 10rem;
-  background: url(../assets/placeHolderSprites/snorlax.png);
+  width: 15rem;
+  height: 15rem;
+  background: var(--sliderImg);
   background-size: contain;
   border: none;
 }

@@ -1,8 +1,10 @@
 
     const pokeApp ={};
+
     /*targets the counter div*/ 
     let correctScore = 0;
     const counter = document.getElementById('streakCounter')
+
 
     pokeApp.pokeArray = new Array();
     pokeApp.init = function(){
@@ -121,7 +123,9 @@
     pokeApp.populate = function(){
         const indexes = [];
       for (i = 1; i <= 4; i++) {
-        const num = Math.ceil(Math.random() * 150);
+
+        const num = Math.ceil(Math.random() * 151);
+
         //stop repeating numbers code
         if(indexes.includes(num)){
           i--;
@@ -157,8 +161,7 @@
                     //run the game
                     pokeApp.runGame();
                   });
-          
-        
+
     };
     
 
