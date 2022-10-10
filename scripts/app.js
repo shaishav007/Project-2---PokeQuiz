@@ -4,6 +4,9 @@
     // dummy array: 4 objects
     // make another random generator with value 0-3
     const pokeApp ={};
+
+    
+
     pokeApp.pokeArray = new Array();
     // we need to populate pokeArray with objects that have a name and image associated with them.
     
@@ -159,7 +162,7 @@
       for (i = 1; i <= 4; i++) {
         // console.log("Range",pokeApp.range);
         //this is flawed because it can generate the same pokemon number twice...134.4  and 134.5  will both result in vaporeon. Screenshot saved
-        const num = Math.ceil(Math.random() * 150);
+        const num = Math.ceil(Math.random() * 151);
 
         //stop repeating numbers code
         //if the index array so far already has num then this i is wasted so i--
@@ -208,12 +211,13 @@
                     //run the game
                     pokeApp.runGame();
                   });
-          
-        
+
     };
     
 
     pokeApp.init();
+
+
 
     // buttons
     // based on our correctAnswer, we append to the DOM an image and a name to one button, we also

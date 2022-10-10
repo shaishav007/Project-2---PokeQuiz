@@ -1,4 +1,8 @@
 @use "variables" as *;
+:root{
+   --sliderImg: url("../assets/placeHolderSprites/snorlax.png");
+   --isPlaying:false;
+}
 
 .dropdownSection{
     display: flex;
@@ -47,9 +51,9 @@
     height: 10vw;
     width: 100%;
     &::-moz-range-thumb{
-        width: 10rem;
-        height: 10rem;
-        background:url(../assets/placeHolderSprites/snorlax.png);
+        width: 15rem;
+        height: 15rem;
+        background:var(--sliderImg);
         background-size: contain;
         border: none;
     }
