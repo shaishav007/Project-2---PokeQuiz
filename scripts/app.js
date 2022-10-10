@@ -46,8 +46,22 @@
       pokeApp.pokeArray=[];
     };
 
+    //animation of lights
+    pokeApp.animateLights = function(){
+      //animation effects of light
+
+      let i=0;
+      const animation = setInterval(function(){
+          document.documentElement.style.setProperty(`--blurMultiplier`,Math.random()*1.5);
+          console.log("delay works",i);
+      },150);
+      setTimeout(()=>{clearInterval(animation)},3000);
+      
+    }
+
     //PLAY the audio of the correct Pokemon
     pokeApp.playText = function (pokeMon){
+      pokeApp.animateLights();
       const description = pokeMon.descriptionText;
       const utterance = new SpeechSynthesisUtterance(description);
       utterance.rate = 1;
