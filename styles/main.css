@@ -238,7 +238,7 @@ html {
   min-height: 86vh;
 }
 
-.dropdownSection {
+.difficultySetting {
   width: 100%;
   height: 75vh;
   background-image: url(../assets/backgroundImages/17070480.jpg);
@@ -285,14 +285,14 @@ nav a:focus {
   --isPlaying:false;
 }
 
-.dropdownSection {
+.difficultySetting {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 40vw;
 }
-.dropdownSection .headerText {
+.difficultySetting .headerText {
   font-family: "Pokemon-Solid";
   text-transform: capitalize;
   font-size: 2.5rem;
@@ -304,18 +304,18 @@ nav a:focus {
   text-shadow: -1.5px -1.5px 0 #2a75bb, 1.5px -1.5px 0 #2a75bb, -1px 2px 0 #2a75bb, 1px 2px 0 #2a75bb;
   text-align: center;
 }
-.dropdownSection .contentContainer {
+.difficultySetting .contentContainer {
   max-width: 75%;
   display: flex;
 }
-.dropdownSection .contentContainer img {
+.difficultySetting .contentContainer img {
   width: 150px;
   height: auto;
 }
-.dropdownSection .contentContainer .dropdownMenu {
+.difficultySetting .contentContainer .dropdownMenu {
   width: 50vw;
 }
-.dropdownSection .contentContainer .dropdownMenu select {
+.difficultySetting .contentContainer .dropdownMenu select {
   background-color: #c7a008;
   font-family: "Pokemon-Solid";
   font-size: 24px;
@@ -324,6 +324,13 @@ nav a:focus {
 .difficultyRange {
   height: 10vw;
   width: 100%;
+}
+.difficultyRange::-webkit-slider-thumb {
+  width: 15rem;
+  height: 15rem;
+  background: var(--sliderImg);
+  background-size: contain;
+  border: none;
 }
 .difficultyRange::-moz-range-thumb {
   width: 15rem;
@@ -390,6 +397,7 @@ nav a:focus {
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin: 2px 0;
   width: 35px;
   height: 35px;
   background-color: lightblue;
@@ -532,7 +540,6 @@ nav a:focus {
   font-size: 1.2rem;
   font-weight: 600;
   padding: 0.5rem 1rem;
-  margin: 0 auto;
   text-transform: uppercase;
   border: 3px ridge black;
   cursor: pointer;
@@ -543,32 +550,63 @@ nav a:focus {
   box-shadow: 0 4px 0 0 #008000;
 }
 
-.pokedex {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  position: -webkit-sticky;
-  position: sticky;
-  border: 5px ridge #cc0000;
-  width: 420px;
-  z-index: -1;
-  background-color: #2a75bb;
-  transition-duration: 0.2s;
-  bottom: 100%;
-}
-.pokedex p {
-  width: 75%;
-}
-.pokedex .devContainer {
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
+/*modal stylings*/
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  display: none;
+  -webkit-animation: modal-open 0.5s;
+          animation: modal-open 0.5s;
 }
 
-.open {
-  transform: translateX(100%);
+.modalContent {
+  background: #2a75bb;
+  margin-top: 100px;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 8px 24px;
+  border-radius: 4px;
+  border: 2px ridge #ff0000;
+  z-index: 4;
+}
+.modalContent .modalHeader {
+  text-align: center;
+  font-weight: 500;
+  padding: 10px 0;
+  font-size: 26px;
+}
+.modalContent .modalHeader h5 {
+  font-size: 1.25rem;
+  text-transform: uppercase;
+}
+.modalContent .modalBody {
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+}
+.modalContent .modalBody p {
+  width: 90%;
+  text-align: center;
+}
+.modalContent .modalFooter {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding: 15px 0;
+}
+.modalContent .modalFooter .modalClose {
+  padding: 8px 16px;
+  font-size: 14px;
+  outline: none;
+  border-radius: 4px;
+  background-color: #ffcb05;
+  color: black;
 }
 
 .contactPage {

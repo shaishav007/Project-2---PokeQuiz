@@ -8,27 +8,23 @@
     <link rel="stylesheet" href="./styles/main.css" />
   </head>
   <body>
-    <header>
-      <nav class="navBar">
-        <ul class="navList">
-          <li class="navItem"><a href="./index.html">Home</a></li>
-          <li class="navItem"><a href="./contactUs.html">Contact us</a></li>
-        </ul>
-        <!-- .navList ends -->
-      </nav>
-      <!-- .navBar ends -->
-    </header>
-    <section class="dropdownSection">
+    <section class="difficultySetting">
       <div class="headerText wrapper">
         <h1>Name the Pokemon quiz!</h1>
       </div>
     </section>
     <section class="dropdownMenu wrapper">
       <label for="difficultySlider">Choose your difficulty</label>
-      <input type="range" id="difficultyRange" name="difficultyRange"
-             min="25" max="493" step="10" class="difficultyRange">
-      
-      
+      <input
+        type="range"
+        id="difficultyRange"
+        name="difficultyRange"
+        min="25"
+        max="493"
+        step="10"
+        class="difficultyRange"
+      />
+
       <a href="./quiz.html"><button class="pokeBallButton">GO</button></a>
     </section>
     <script src="./scripts/settingsPage.js"></script>

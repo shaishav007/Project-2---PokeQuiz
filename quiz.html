@@ -11,8 +11,7 @@
     <header>
       <nav class="navBar">
         <ul class="navList">
-          <li class="navItem"><a href="./index.html">Home</a></li>
-          <li class="navItem"><a href="./contactUs.html">Contact us</a></li>
+          <li class="navItem"><a href="./index.html">Reset selection</a></li>
         </ul>
         <!-- .navList ends -->
       </nav>
@@ -70,36 +69,54 @@
           </div>
 
           <div class="quizFooter">
-            <button type="button" id="pokeDex" class="submitAnswer">
-              pokeDex
+            <button class="modalOpen findButton" data-modal="modal1">
+              About
             </button>
+            <!-- Modal content begins. -->
+            <div class="modal" id="modal">
+              <div class="modalContent">
+                <div class="modalHeader title">
+                  <h5>About the Devs</h5>
+                </div>
+                <div class="modalBody">
+                  <p>
+                    This site and application were developed by Shaishav Vashi
+                    and Colm O'Sullivan.<br /><br />
+                    If you would like to learn more about the developers of this
+                    project, click on the buttons below!
+                  </p>
+                </div>
+                <div class="modalFooter">
+                  <div class="colm">
+                    <a
+                      href="https://www.linkedin.com/in/colm-o-sullivan-9163baa6/"
+                      ><button>
+                        COLM
+                        <img
+                          src="./assets/placeHolderSprites/feraligaterIcon.png"
+                          alt="A shiny Feraligator placeholder image"
+                        /></button
+                    ></a>
+                  </div>
+                  <div class="shaishav">
+                    <a href="https://www.linkedin.com/in/shaishavvashi/"
+                      ><button>
+                        Shaishav
+                        <img
+                          src="./assets/placeHolderSprites/charizardIcon.png"
+                          alt="A shiny Charizard placeholder image"
+                        /></button
+                    ></a>
+                  </div>
+
+                  <button class="link modalClose">X</button>
+                </div>
+              </div>
+            </div>
+            <!-- Modal content ends. -->
             <button>mute</button>
           </div>
           <!-- hidden pokedex, enabled on the correct answer -->
-          <div class="pokedex">
-            <p>
-              If you would like to learn more about the developers of this
-              project, click on the Pokemon below!
-            </p>
-
-            <div class="devContainer">
-              <div class="colm">
-                <a href="https://www.linkedin.com/in/colm-o-sullivan-9163baa6/"
-                  >COLM
-                  <img
-                    src="./assets/placeHolderSprites/160.png"
-                    alt="A shiny Feraligator placeholder image"
-                /></a>
-              </div>
-              <div class="shaishav">
-                <a href="https://www.linkedin.com/in/shaishavvashi/"
-                  ><img
-                    src="./assets/placeHolderSprites/6.png"
-                    alt="A shiny Charizard placeholder image"
-                /></a>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

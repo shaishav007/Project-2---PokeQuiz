@@ -6,17 +6,14 @@ const settings = {};
     'advanced': "../assets/placeHolderSprites/raichu.png"
 }
 
+/*set the css variable slider img*/ 
 settings.handleUpdate = function(e){
-    //set the css variable slider img
     let entry = "";
-    // console.log(this.value);
     if(this.value<151){
         entry = settings.sliderImgs['beginner'];
-        
     }
     else if(this.value<300){
         entry = settings.sliderImgs['intermediate'];
-        
     }
     else{
         entry= settings.sliderImgs['advanced'];
@@ -31,5 +28,5 @@ settings.init = function(){
     console.log(settings.range);
     //once the Go button is clicked, then initialise this.
   };
-      
+
 settings.init();

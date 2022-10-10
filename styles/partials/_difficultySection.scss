@@ -4,7 +4,7 @@
    --isPlaying:false;
 }
 
-.dropdownSection{
+.difficultySetting{
     display: flex;
     flex-direction: column  ;
     justify-content: center;
@@ -50,6 +50,13 @@
 .difficultyRange{
     height: 10vw;
     width: 100%;
+    &::-webkit-slider-thumb{
+        width: 15rem;
+        height: 15rem;
+        background:var(--sliderImg);
+        background-size: contain;
+        border: none;
+    } 
     &::-moz-range-thumb{
         width: 15rem;
         height: 15rem;
