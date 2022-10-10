@@ -20,3 +20,8 @@ $wideDesktop:"1500px";
 $desktop:"1000px";
 $tablet:"810px";
 $mobile:"500px";
+
+@mixin glow($color,$spread,$multiplier){
+    transition-duration:0.05s;
+    box-shadow: 0px 0px calc($spread*$multiplier) 0px $color;
+}

@@ -353,6 +353,10 @@ nav a:focus {
   transform: scale(1.2);
 }
 
+:root {
+  --blurMultiplier:1;
+}
+
 .pokeWrapper {
   background-color: #ff0000;
   border-style: groove;
@@ -423,6 +427,8 @@ nav a:focus {
   background: radial-gradient(circle, rgb(229, 231, 242) 0%, rgb(122, 133, 226) 48%, rgba(230, 77, 77, 0.9791193008) 100%);
   width: 300px;
   height: 240px;
+  transition-duration: 0.05s;
+  box-shadow: 0px 0px calc(5rem * var(--blurMultiplier)) 0px white;
 }
 .spriteContainer img {
   width: 100%;
@@ -443,6 +449,8 @@ nav a:focus {
   border-radius: 50%;
   list-style: none;
   border: 1px solid;
+  transition-duration: 0.05s;
+  box-shadow: 0px 0px calc(2rem * var(--blurMultiplier)) 0px lightblue;
 }
 .pokedexHeader .pokedexLights .redCircle {
   background-color: #cc0000;
@@ -452,6 +460,8 @@ nav a:focus {
   border: 1px solid;
   margin-left: 21px;
   list-style: none;
+  transition-duration: 0.05s;
+  box-shadow: 0px 0px calc(1rem * var(--blurMultiplier)) 0px orange;
 }
 .pokedexHeader .pokedexLights .yellowCircle {
   background-color: #c7a008;
@@ -461,6 +471,8 @@ nav a:focus {
   border: 1px solid;
   margin-left: 21px;
   list-style: none;
+  transition-duration: 0.05s;
+  box-shadow: 0px 0px calc(1rem * var(--blurMultiplier)) 0px yellow;
 }
 .pokedexHeader .pokedexLights .greenCircle {
   background-color: #008000;
@@ -470,6 +482,8 @@ nav a:focus {
   border: 1px solid;
   margin-left: 21px;
   list-style: none;
+  transition-duration: 0.05s;
+  box-shadow: 0px 0px 0.25rem 0px green;
 }
 .pokedexHeader .gameTitle {
   text-align: center;
