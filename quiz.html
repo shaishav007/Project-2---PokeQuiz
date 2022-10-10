@@ -70,36 +70,45 @@
           </div>
 
           <div class="quizFooter">
+            <button class="settingsButton">settings</button>
             <button type="button" id="pokeDex" class="submitAnswer">
               pokeDex
             </button>
-            <button>mute</button>
+            
           </div>
           <!-- hidden pokedex, enabled on the correct answer -->
-          <div class="pokedex">
-            <p>
-              If you would like to learn more about the developers of this
-              project, click on the Pokemon below!
-            </p>
+        </div>
+        <div class="pokedex">
+          <p class="innerDisplay">
 
-            <div class="devContainer">
-              <div class="colm">
-                <a href="https://www.linkedin.com/in/colm-o-sullivan-9163baa6/"
-                  >COLM
-                  <img
-                    src="./assets/placeHolderSprites/160.png"
-                    alt="A shiny Feraligator placeholder image"
-                /></a>
-              </div>
-              <div class="shaishav">
-                <a href="https://www.linkedin.com/in/shaishavvashi/"
-                  ><img
-                    src="./assets/placeHolderSprites/6.png"
-                    alt="A shiny Charizard placeholder image"
-                /></a>
-              </div>
+          </p>
+          <p >
+            Meet the Makers!
+          </p>
+
+          <div class="devContainer">
+            <div class="colm">
+              <a href="https://www.linkedin.com/in/colm-o-sullivan-9163baa6/"
+                ><p>COLM</p>
+                <img
+                  src="./assets/placeHolderSprites/160.png"
+                  alt="A shiny Feraligator placeholder image"
+              /></a>
+            </div>
+            <div class="shaishav">
+              <a href="https://www.linkedin.com/in/shaishavvashi/"
+                ><p>Shaishav</p><img
+                  src="./assets/placeHolderSprites/6.png"
+                  alt="A shiny Charizard placeholder image"
+              /></a>
             </div>
           </div>
+        </div>
+        <!-- hidden settings panel -->
+        <div class="settings">
+          <label for="difficultySlider">Difficulty</label>
+          <input type="range" id="difficultyRangeMini" name="difficultyRangeMini"
+             min="25" max="493" step="10" class="difficultyRangeMini">
         </div>
       </div>
     </section>
@@ -107,7 +116,7 @@
     <footer>
       <p>Data courtesy of the <a href="https://pokeapi.co/">the PokeAPI</a></p>
 
-      <p>Copyright <a href="https://junocollege.com/">Juno Collge 2022</a></p>
+      <p>Made with love at <a href="https://junocollege.com/">Juno College 2022</a></p>
     </footer>
 
     <script src="./scripts/app.js"></script>

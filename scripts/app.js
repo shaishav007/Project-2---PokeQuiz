@@ -4,14 +4,47 @@
     /*targets the counter div*/ 
     let correctScore = 0;
     const counter = document.getElementById('streakCounter')
+    pokeApp.range = 151;
 
 
     pokeApp.pokeArray = new Array();
     pokeApp.init = function(){
         // first, we fetch pokemon and populate the elements
         pokeApp.populate();
+
+        //settings range
+        const bar = document.querySelector(".difficultyRangeMini");
+        bar.addEventListener('mousemove',pokeApp.handleUpdate);
     };
 
+   pokeApp.sliderImgs = {
+      'beginner': "../assets/placeHolderSprites/pichu.png",
+      'intermediate': "../assets/placeHolderSprites/pikachu.png",
+      'advanced': "../assets/placeHolderSprites/raichu.png"
+  }
+
+    pokeApp.handleUpdate = function(e){
+      //set the css variable slider img
+      //add the difficulty in label
+      const label = document.querySelector(".settings label");
+      label.textContent= "Difficulty :"+pokeApp.range;
+
+      let entry = "";
+      // console.log(this.value);
+      if(this.value<151){
+          entry = pokeApp.sliderImgs['beginner'];
+          
+      }
+      else if(this.value<300){
+          entry = pokeApp.sliderImgs['intermediate'];
+          
+      }
+      else{
+          entry= pokeApp.sliderImgs['advanced'];
+      }
+      document.documentElement.style.setProperty(`--sliderImg`,`url(${entry})`);
+      pokeApp.range=this.value;
+  };
     //this function should run only after all the markups have been filled
     pokeApp.runGame=function(){
       //figure out a correct answer
@@ -93,6 +126,10 @@
         //pokedex entry for the correct answer
         if(item.isCorrect){
           pokeApp.playText(item);
+          
+          //display in innerdisplay
+          const innerDisplay = document.querySelector(".innerDisplay");
+          innerDisplay.textContent = item.descriptionText;
         }
       });
       //add a timeout before it resets
@@ -102,9 +139,16 @@
       },3000);
     };
 
+    pokeApp.makeSettingsAppear = function(e){
+      const settingsContainer = document.querySelector('.settings');
+      console.log(settingsContainer);
+      settingsContainer.classList.toggle("openSettings");
+    }
+
+
     pokeApp.makePokedexAppear = function(e){
       const pokedexContainer = document.querySelector('.pokedex');
-      pokedexContainer.classList.toggle("open");
+      pokedexContainer.classList.toggle("openDex");
     }
       pokeApp.fillMarkups = function (){
         pokeApp.pokeArray.forEach((item) => {
@@ -118,6 +162,10 @@
         });
         const pokeDexButton = document.querySelector('.submitAnswer');
         pokeDexButton.addEventListener('click',pokeApp.makePokedexAppear);
+
+        //
+        const settingsButton = document.querySelector(".settingsButton");
+        settingsButton.addEventListener("click",pokeApp.makeSettingsAppear);
       };
       
        pokeApp.getThePokemon = async function(url){
@@ -135,10 +183,13 @@
       };
     
     pokeApp.populate = function(){
+
+      
+      
         const indexes = [];
       for (i = 1; i <= 4; i++) {
 
-        const num = Math.ceil(Math.random() * 151);
+        const num = Math.ceil(Math.random() * pokeApp.range);
 
         //stop repeating numbers code
         if(indexes.includes(num)){

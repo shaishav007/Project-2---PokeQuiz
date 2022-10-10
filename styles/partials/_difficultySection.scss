@@ -49,7 +49,7 @@
 
 .difficultyRange{
     height: 10vw;
-    width: 100%;
+    width: 90%;
     &::-moz-range-thumb{
         width: 15rem;
         height: 15rem;
@@ -64,6 +64,26 @@
         background: #205928;
     }
 }
+
+.difficultyRangeMini{
+    height: 5vw;
+    width: 80%;
+    background:$pokemonRed;
+    &::-moz-range-thumb{
+        width: 10rem;
+        height: 10rem;
+        background:var(--sliderImg);
+        background-size: contain;
+        border: none;
+    }
+
+    &::-moz-range-track{
+        width: 70%;
+        height: 0.5rem;
+        background: #205928;
+    }
+}
+
 .pokeBallButton{
     display: block;
     margin: 0 auto;
