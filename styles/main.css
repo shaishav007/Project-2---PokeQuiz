@@ -242,7 +242,6 @@ html {
 
 .dropdownSection {
   width: 100%;
-  height: 75vh;
   background-image: url(../assets/backgroundImages/17070480.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -292,15 +291,19 @@ nav a:focus {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  height: clamp(50rem, 100vw, 75rem);
+  background-position: center;
+
 }
 .dropdownSection .headerText {
   font-family: "Pokemon-Solid";
   text-transform: capitalize;
-  font-size: 2.5rem;
+  font-size: clamp(1rem, 2.5vw, 5rem);
   letter-spacing: 10px;
   margin: 0 auto;
   position: absolute;
-  top: 140px;
+  top: 10%;
   color: #ffcb05;
   text-shadow: -1.5px -1.5px 0 #2a75bb, 1.5px -1.5px 0 #2a75bb, -1px 2px 0 #2a75bb, 1px 2px 0 #2a75bb;
   text-align: center;
@@ -320,13 +323,18 @@ nav a:focus {
   width: 150px;
   height: auto;
 }
-.dropdownSection .contentContainer .dropdownMenu {
+
+.dropdownMenu {
   width: 50vw;
 }
-.dropdownSection .contentContainer .dropdownMenu select {
+.dropdownMenu select {
   background-color: #c7a008;
   font-family: "Pokemon-Solid";
   font-size: 24px;
+}
+.dropdownMenu a {
+  display: block;
+  margin-block: 10rem;
 }
 
 .difficultyRange {
@@ -334,15 +342,15 @@ nav a:focus {
   width: 90%;
 }
 .difficultyRange::-moz-range-thumb {
-  width: 15rem;
-  height: 15rem;
+  width: clamp(1rem, 20vw, 15rem);
+  height: clamp(1rem, 20vw, 15rem);
   background: var(--sliderImg);
   background-size: contain;
   border: none;
 }
 .difficultyRange::-moz-range-track {
-  width: 100%;
-  height: 0.5rem;
+  width: 55vw;
+  height: 0.5vw;
   background: #205928;
 }
 
@@ -376,8 +384,9 @@ nav a:focus {
   background: url(../assets/placeHolderSprites/pokeball.jpg);
   background-size: contain;
   border: none;
-  color: white;
+  color: #ffcb05;
   transition: 0.1s;
+  font-family: "Pokemon-Solid";
 }
 .pokeBallButton:active {
   transform: scale(1.2);
@@ -385,6 +394,7 @@ nav a:focus {
 
 :root {
   --blurMultiplier:1;
+  --userBlur:1;
 }
 
 .pokeWrapper {
@@ -395,12 +405,14 @@ nav a:focus {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);
   position: relative;
 }
+
 @media (max-width: 420px) {
   .pokeWrapper {
     max-width: 95vw;
     height: 100%;
   }
 }
+
 
 .quizContainer {
   display: flex;
@@ -615,6 +627,7 @@ nav a:focus {
 .openDex {
   transform: translateX(100%);
 }
+
 @media (max-width: 1300px) {
   .openDex {
     transform: translateX(0%);
@@ -626,6 +639,7 @@ nav a:focus {
 @media (max-width: 1300px) and (max-width: 420px) {
   .openDex {
     max-width: 50vw;
+
   }
 }
 
@@ -643,6 +657,7 @@ nav a:focus {
 .openSettings {
   transform: translateX(-100%);
 }
+
 @media (max-width: 1300px) {
   .openSettings {
     z-index: 99;
@@ -652,6 +667,7 @@ nav a:focus {
 @media (max-width: 1300px) and (max-width: 420px) {
   .openSettings {
     max-width: 50vw;
+
   }
 }
 
@@ -675,7 +691,12 @@ nav a:focus {
   height: -moz-fit-content;
   height: fit-content;
   border-radius: 15%;
+
+  transition-duration: 0.05s;
+  box-shadow: 0px 0px calc(2rem * var(--userBlur)) 0px white;
+
   border: 2px ridge #3c5aa6;
+
 }
 .colm a, .shaishav a {
   color: white;
@@ -690,6 +711,11 @@ footer {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+}
+@media (max-width: 1200px) {
+  footer {
+    transform: translateY(600%);
+  }
 }
 
 * {

@@ -1,6 +1,7 @@
 @use "variables" as *;
 :root{
   --blurMultiplier:1;
+  --userBlur:1;
 }
 
 .pokeWrapper {
@@ -10,10 +11,12 @@
   border-radius: 1.5rem;
   box-shadow: 0 4px 6px rgb(0 0 0 /10%), 0 1px 3px rgb(0 0 0 / 10%);
   position: relative;
+
   @media (max-width: $mobile){
     max-width: 95vw;
     height: 100%;
   }
+
 }
 
 .quizContainer{
@@ -241,6 +244,7 @@ margin: 2rem 0;
   }
 }
 
+
 .openDex{
   transform:translateX(100%);
   @media (max-width: $wideDesktop){
@@ -251,6 +255,7 @@ margin: 2rem 0;
     @media (max-width: $mobile){
       max-width: 50vw;
     }
+
   }
 }
 
@@ -265,6 +270,14 @@ margin: 2rem 0;
   padding: 5%;
 }
 
+
+  .innerDisplay{
+    background: green;
+    width: 100%;
+    height: 15rem;
+    border:10px ridge black;
+    @include glow(lightgreen,2rem,var(--blurMultiplier));
+
 .openSettings{
   transform:translateX(-100%);
   @media (max-width: $wideDesktop){
@@ -274,16 +287,28 @@ margin: 2rem 0;
     @media (max-width: $mobile){
       max-width: 50vw;
     }
+
   }
 }
 
-.innerDisplay{
-  background: green;
-  width: 100%;
-  height: 15rem;
-  border:10px ridge black;
-  @include glow(lightgreen,2rem,var(--blurMultiplier));
-}
+  .colm,.shaishav{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: lightblue;
+    width: 130px;
+    height: fit-content;
+    border-radius: 15%;
+
+    @include glow(white,2rem,var(--userBlur));
+
+    a{
+      color: white;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
 
 .colm,.shaishav{
   display: flex;
