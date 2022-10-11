@@ -157,7 +157,8 @@ pokeApp.checkAnswer=function(){
         correctScore -= correctScore
         counter.textContent= correctScore;
       }
-
+      const img = document.querySelector(".spriteContainer img");
+          img.style.filter=`brightness(1)`;
       
   };
     //this function should run only after all the markups have been filled
