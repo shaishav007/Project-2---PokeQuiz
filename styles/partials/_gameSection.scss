@@ -1,6 +1,7 @@
 @use "variables" as *;
 :root{
   --blurMultiplier:1;
+  --userBlur:1;
 }
 
 .pokeWrapper {
@@ -13,9 +14,7 @@
   box-shadow: 0 4px 6px rgb(0 0 0 /10%), 0 1px 3px rgb(0 0 0 / 10%);
 
   position: relative;
-  @media (width: 405px) {
-    
-  }
+  
 }
 
 .quizContainer{
@@ -270,6 +269,10 @@ margin: 2rem 0;
 
   .openDex{
     transform:translateX(100%);
+    @media (max-width: 1200px) {
+      transform: translateY(150%);
+      
+    }
     
   }
 
@@ -287,6 +290,11 @@ margin: 2rem 0;
 
   .openSettings{
     transform:translateX(-100%);
+    @media (max-width: 1200px) {
+      transform: translateY(175%);
+      
+    }
+    
   }
   .innerDisplay{
     background: green;
@@ -305,6 +313,9 @@ margin: 2rem 0;
     width: 130px;
     height: fit-content;
     border-radius: 15%;
+
+    @include glow(white,2rem,var(--userBlur));
+
     a{
       color: white;
       text-decoration: none;

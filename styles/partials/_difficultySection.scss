@@ -9,16 +9,17 @@
     flex-direction: column  ;
     justify-content: center;
     align-items: center;
-    height: 40vw;
+    height: clamp(50rem,100vw,75rem);
+    background-position: center;
     
     .headerText{
         font-family: $solidFont;
         text-transform: capitalize;
-        font-size: 2.5rem;
+        font-size: clamp(1rem,2.5vw,5rem);
         letter-spacing: 10px;
         margin: 0 auto;
         position: absolute;
-        top: 140px;
+        top:  10%;;
         color: $pokemonYellow;
         text-shadow: -1.5px -1.5px 0 $pokemonBlueLight, 1.5px -1.5px 0 $pokemonBlueLight, -1px 2px 0 $pokemonBlueLight, 1px 2px 0 $pokemonBlueLight;
         text-align: center;
@@ -30,37 +31,43 @@
            width: 150px;
            height: auto; 
         }
-        .dropdownMenu{
-            width: 50vw;
-            select{
-                background-color: $pokemonYellowShadow;
-                font-family: $solidFont;
-                font-size: 24px;
-                
-            }
-            
-
-            
-        }
+       
     }
 
     
+
+    
+}
+.dropdownMenu{
+    width: 50vw;
+    
+    select{
+        background-color: $pokemonYellowShadow;
+        font-family: $solidFont;
+        font-size: 24px;
+        
+    }
+    a{
+        display: block;
+    margin-block: 10rem;
+    }
+
 }
 
 .difficultyRange{
     height: 10vw;
     width: 90%;
     &::-moz-range-thumb{
-        width: 15rem;
-        height: 15rem;
+        width: clamp(1rem,20vw,15rem);
+        height: clamp(1rem,20vw,15rem);
         background:var(--sliderImg);
         background-size: contain;
         border: none;
     }
 
     &::-moz-range-track{
-        width: 100%;
-        height: 0.5rem;
+        width: 55vw;
+        height: 0.5vw;
         background: #205928;
     }
 }
@@ -92,8 +99,9 @@
     background: url(../assets/placeHolderSprites/pokeball.jpg);
     background-size: contain;
     border: none;
-    color: white;
+    color: #ffcb05;
     transition: 0.1s;
+    font-family: "Pokemon-Solid";
 
     &:active{
         transform: scale(1.2);

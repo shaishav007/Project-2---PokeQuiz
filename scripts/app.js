@@ -12,10 +12,61 @@
         // first, we fetch pokemon and populate the elements
         pokeApp.populate();
 
+        //contact us opens pokedex
+        const contactUsLink = document.querySelector(".contactUsLink");
+        contactUsLink.addEventListener('click',function(){
+
+          pokeApp.makePokedexAppear();
+        });
+
         //settings range
         const bar = document.querySelector(".difficultyRangeMini");
         bar.addEventListener('mousemove',pokeApp.handleUpdate);
+
+        //makers audio
+        const colmButton = document.querySelector(".colm");
+        const shaishavButton = document.querySelector(".shaishav");
+        colmButton.addEventListener('click',pokeApp.playAudioAndDisplayText);
+        shaishavButton.addEventListener('click',pokeApp.playAudioAndDisplayText);
     };
+
+    //play audio
+    pokeApp.playAudioAndDisplayText = function(e){
+      // let audioToPlay = document.querySelector(audioClassName);
+      const colmAudio = new Audio(src="./sounds/ColmIntro.mp3");
+      const shaishavAudio = new Audio(src="./sounds/ShaishavIntro.mp3");
+
+      const innerDisplay = document.querySelector(".innerDisplay");
+      
+      innerDisplay.textContent="Reach Out to "+this.className+" on Linkedin?";
+      
+      //create a yes button
+      const yesButton = document.createElement('a');
+      yesButton.textContent='Yes';
+      yesButton.style.padding = `1rem`;
+      yesButton.style.display = "block";
+
+      //no button
+      const noButton = document.createElement('a');
+      noButton.textContent='No Thanks';
+      noButton.style.padding = `1rem`;
+      noButton.style.display = "block";
+
+      if(this.className=="colm"){
+        colmAudio.play();
+        yesButton.href = "https://www.linkedin.com/in/colm-o-sullivan-9163baa6/";
+        noButton.href='#';
+        
+      }
+      if(this.className=="shaishav"){
+        shaishavAudio.play();
+        yesButton.href = "https://www.linkedin.com/in/shaishavvashi/";
+        noButton.href='#';
+      }
+      
+      innerDisplay.appendChild(yesButton);
+      innerDisplay.appendChild(noButton);
+    }
 
    pokeApp.sliderImgs = {
       'beginner': "../assets/placeHolderSprites/pichu.png",
@@ -61,7 +112,6 @@
           spriteContainer.appendChild(correctImg);
         }
       });
-
 
       //NOW that everything has added lets setup the eventListeners
       buttonList.forEach((item)=>{
