@@ -236,6 +236,8 @@ html {
 .gameBackground {
   width: 100%;
   min-height: 86vh;
+  background: rgb(6, 103, 4);
+  background: linear-gradient(0deg, rgb(6, 103, 4) 0%, rgb(8, 91, 5) 2%, rgb(8, 91, 5) 4%, rgb(11, 76, 6) 5%, rgb(12, 65, 7) 7%, rgb(11, 74, 6) 11%, rgb(13, 60, 7) 13%, rgb(15, 75, 8) 15%, rgb(8, 91, 5) 17%, rgb(17, 85, 9) 17%, rgb(7, 95, 5) 17%, rgb(17, 88, 9) 19%, rgb(14, 71, 8) 20%, rgb(12, 63, 7) 22%, rgb(17, 85, 9) 24%, rgb(15, 80, 8) 26%, rgb(17, 93, 9) 29%, rgb(19, 102, 10) 31%, rgb(18, 97, 10) 33%, rgb(20, 110, 10) 34%, rgb(21, 117, 11) 36%, rgb(21, 117, 11) 37%, rgb(21, 124, 11) 38%, rgb(23, 142, 12) 41%, rgb(29, 110, 12) 45%, rgb(66, 73, 15) 47%, rgb(161, 104, 12) 51%, rgb(232, 240, 48) 52%, rgb(237, 204, 93) 52%, rgb(205, 204, 60) 53%, rgb(173, 204, 26) 56%, rgb(126, 188, 122) 58%, rgb(79, 172, 217) 64%, rgb(57, 179, 242) 69%, rgb(71, 175, 226) 72%, rgb(106, 163, 186) 74%, rgb(141, 151, 145) 78%, rgb(183, 137, 96) 80%, rgb(247, 116, 21) 83%, rgb(243, 114, 20) 87%, rgb(246, 116, 21) 89%, rgb(246, 116, 21) 90%, rgb(233, 108, 17) 93%, rgb(209, 94, 11) 95%, rgb(202, 90, 9) 98%, rgb(182, 78, 3) 100%);
 }
 
 .dropdownSection {
@@ -289,8 +291,10 @@ nav a:focus {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   height: clamp(50rem, 100vw, 75rem);
   background-position: center;
+
 }
 .dropdownSection .headerText {
   font-family: "Pokemon-Solid";
@@ -303,6 +307,13 @@ nav a:focus {
   color: #ffcb05;
   text-shadow: -1.5px -1.5px 0 #2a75bb, 1.5px -1.5px 0 #2a75bb, -1px 2px 0 #2a75bb, 1px 2px 0 #2a75bb;
   text-align: center;
+}
+.dropdownSection .headerText h2 {
+  font-size: 1.6rem;
+  font-family: "game-text";
+  text-transform: none;
+  letter-spacing: 2px;
+  color: #ffcb05;
 }
 .dropdownSection .contentContainer {
   max-width: 75%;
@@ -361,9 +372,13 @@ nav a:focus {
   background: #205928;
 }
 
+.goButton {
+  display: flex;
+  justify-content: center;
+}
+
 .pokeBallButton {
   display: block;
-  margin: 0 auto;
   padding: 5vw;
   font-size: 2rem;
   background: url(../assets/placeHolderSprites/pokeball.jpg);
@@ -383,14 +398,21 @@ nav a:focus {
 }
 
 .pokeWrapper {
-  width: 420px;
+  width: 450px;
   height: 690px;
   margin: 2rem 0;
-  border-top-left-radius: 1.5rem;
-  border-bottom-left-radius: 1.5rem;
+  border-radius: 1.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);
   position: relative;
 }
+
+@media (max-width: 420px) {
+  .pokeWrapper {
+    max-width: 95vw;
+    height: 100%;
+  }
+}
+
 
 .quizContainer {
   display: flex;
@@ -401,6 +423,7 @@ nav a:focus {
   z-index: 10;
   background-color: #ff0000;
   border-style: groove;
+  border-radius: 1.5rem;
   padding: 1.5rem 4rem 3rem 4rem;
 }
 
@@ -424,6 +447,7 @@ nav a:focus {
   background-color: lightblue;
   color: black;
   border: 2px inset black;
+  margin: 3px 0;
 }
 .screenBorder .speakerContainer {
   display: flex;
@@ -580,14 +604,16 @@ nav a:focus {
   align-items: center;
   position: absolute;
   border: 5px ridge #cc0000;
+  border-radius: 1.5rem;
   width: 420px;
   z-index: 1;
   background-color: #ff0000;
   transition-duration: 0.2s;
-  bottom: 34%;
+  bottom: 33%;
   padding: 5%;
 }
 .pokedex p {
+  text-transform: capitalize;
   width: 75%;
   font-size: 1.5rem;
   margin-block: 2rem;
@@ -601,9 +627,19 @@ nav a:focus {
 .openDex {
   transform: translateX(100%);
 }
-@media (max-width: 1200px) {
+
+@media (max-width: 1300px) {
   .openDex {
-    transform: translateY(150%);
+    transform: translateX(0%);
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+    color: white;
+  }
+}
+@media (max-width: 1300px) and (max-width: 420px) {
+  .openDex {
+    max-width: 50vw;
+
   }
 }
 
@@ -621,9 +657,17 @@ nav a:focus {
 .openSettings {
   transform: translateX(-100%);
 }
-@media (max-width: 1200px) {
+
+@media (max-width: 1300px) {
   .openSettings {
-    transform: translateY(175%);
+    z-index: 99;
+    transform: translateY(140%);
+  }
+}
+@media (max-width: 1300px) and (max-width: 420px) {
+  .openSettings {
+    max-width: 50vw;
+
   }
 }
 
@@ -641,14 +685,18 @@ nav a:focus {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: lightblue;
+  background-color: #2a75bb;
   width: 130px;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   border-radius: 15%;
+
   transition-duration: 0.05s;
   box-shadow: 0px 0px calc(2rem * var(--userBlur)) 0px white;
+
+  border: 2px ridge #3c5aa6;
+
 }
 .colm a, .shaishav a {
   color: white;
@@ -656,61 +704,11 @@ nav a:focus {
   text-transform: uppercase;
 }
 
-.contactPage {
-  width: 100%;
-  min-height: 86vh;
-  background: rgb(131, 3, 3);
-  background: linear-gradient(180deg, rgb(131, 3, 3) 20%, rgb(233, 9, 9) 40%, rgb(8, 7, 7) 53%, rgb(231, 231, 231) 59%, rgb(112, 109, 109) 100%);
-}
-.contactPage .headerText {
-  font-family: "Pokemon-Solid";
-  text-transform: capitalize;
-  font-size: 2.5rem;
-  letter-spacing: 10px;
-  margin: 0 auto;
-  position: absolute;
-  top: 140px;
-  color: #ffcb05;
-  text-shadow: -1.5px -1.5px 0 #2a75bb, 1.5px -1.5px 0 #2a75bb, -1px 2px 0 #2a75bb, 1px 2px 0 #2a75bb;
-  text-align: center;
-}
-
-.aboutAside {
-  background: #c7a008;
-  display: flex;
-  flex-direction: column;
-  width: 30%;
-  padding: 100px 0;
-  border: 6px ridge #3c5aa6;
-}
-.aboutAside h2 {
-  text-transform: capitalize;
-}
-
-.cardContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 70%;
-}
-.cardContainer .devCard {
-  margin: 2rem 0;
-  width: 50%;
-  border: 6px ridge #3c5aa6;
-  background: #c7a008;
-}
-.cardContainer .devCard .cardText {
-  padding: 10px;
-}
-.cardContainer .devCard .cardText h3 {
-  margin-bottom: 1rem;
-}
-
 footer {
   background-color: #ffcb05;
   min-height: 5.5vh;
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
 }
