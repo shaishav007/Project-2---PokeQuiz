@@ -158,8 +158,7 @@ pokeApp.checkAnswer=function(){
         counter.textContent= correctScore;
       }
 
-      document.documentElement.style.setProperty(`--sliderImg`,`url(${entry})`);
-      pokeApp.range=this.value;
+      
   };
     //this function should run only after all the markups have been filled
     pokeApp.runGame=function(){
