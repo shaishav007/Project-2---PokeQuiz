@@ -13,12 +13,7 @@
         // first, we fetch pokemon and populate the elements
         pokeApp.populate();
 
-        //contact us opens pokedex
-        const contactUsLink = document.querySelector(".contactUsLink");
-        contactUsLink.addEventListener('click',function(){
-
-          pokeApp.makePokedexAppear();
-        });
+       
 
         //settings range
         const bar = document.querySelector(".difficultyRangeMini");
@@ -294,4 +289,3 @@ pokeApp.populate = function(){
 };
 
 pokeApp.init();
-

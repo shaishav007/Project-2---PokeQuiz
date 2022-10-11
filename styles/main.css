@@ -236,12 +236,17 @@ html {
 .gameBackground {
   width: 100%;
   min-height: 86vh;
+  /*washed out version begin*/
+  /*washed out version end*/
+  /*Full blast gradient begins*/
   background: rgb(6, 103, 4);
   background: linear-gradient(0deg, rgb(6, 103, 4) 0%, rgb(8, 91, 5) 2%, rgb(8, 91, 5) 4%, rgb(11, 76, 6) 5%, rgb(12, 65, 7) 7%, rgb(11, 74, 6) 11%, rgb(13, 60, 7) 13%, rgb(15, 75, 8) 15%, rgb(8, 91, 5) 17%, rgb(17, 85, 9) 17%, rgb(7, 95, 5) 17%, rgb(17, 88, 9) 19%, rgb(14, 71, 8) 20%, rgb(12, 63, 7) 22%, rgb(17, 85, 9) 24%, rgb(15, 80, 8) 26%, rgb(17, 93, 9) 29%, rgb(19, 102, 10) 31%, rgb(18, 97, 10) 33%, rgb(20, 110, 10) 34%, rgb(21, 117, 11) 36%, rgb(21, 117, 11) 37%, rgb(21, 124, 11) 38%, rgb(23, 142, 12) 41%, rgb(29, 110, 12) 45%, rgb(66, 73, 15) 47%, rgb(161, 104, 12) 51%, rgb(232, 240, 48) 52%, rgb(237, 204, 93) 52%, rgb(205, 204, 60) 53%, rgb(173, 204, 26) 56%, rgb(126, 188, 122) 58%, rgb(79, 172, 217) 64%, rgb(57, 179, 242) 69%, rgb(71, 175, 226) 72%, rgb(106, 163, 186) 74%, rgb(141, 151, 145) 78%, rgb(183, 137, 96) 80%, rgb(247, 116, 21) 83%, rgb(243, 114, 20) 87%, rgb(246, 116, 21) 89%, rgb(246, 116, 21) 90%, rgb(233, 108, 17) 93%, rgb(209, 94, 11) 95%, rgb(202, 90, 9) 98%, rgb(182, 78, 3) 100%);
+  /*Full blast gradient ends*/
 }
 
 .dropdownSection {
   width: 100%;
+  height: 75vh;
   background-image: url(../assets/backgroundImages/17070480.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -291,19 +296,15 @@ nav a:focus {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  height: clamp(50rem, 100vw, 75rem);
-  background-position: center;
-
 }
 .dropdownSection .headerText {
   font-family: "Pokemon-Solid";
   text-transform: capitalize;
-  font-size: clamp(1rem, 2.5vw, 5rem);
+  font-size: 2.5rem;
   letter-spacing: 10px;
   margin: 0 auto;
   position: absolute;
-  top: 10%;
+  top: 140px;
   color: #ffcb05;
   text-shadow: -1.5px -1.5px 0 #2a75bb, 1.5px -1.5px 0 #2a75bb, -1px 2px 0 #2a75bb, 1px 2px 0 #2a75bb;
   text-align: center;
@@ -323,18 +324,13 @@ nav a:focus {
   width: 150px;
   height: auto;
 }
-
-.dropdownMenu {
+.dropdownSection .contentContainer .dropdownMenu {
   width: 50vw;
 }
-.dropdownMenu select {
+.dropdownSection .contentContainer .dropdownMenu select {
   background-color: #c7a008;
   font-family: "Pokemon-Solid";
   font-size: 24px;
-}
-.dropdownMenu a {
-  display: block;
-  margin-block: 10rem;
 }
 
 .difficultyRange {
@@ -342,15 +338,15 @@ nav a:focus {
   width: 90%;
 }
 .difficultyRange::-moz-range-thumb {
-  width: clamp(1rem, 20vw, 15rem);
-  height: clamp(1rem, 20vw, 15rem);
+  width: 15rem;
+  height: 15rem;
   background: var(--sliderImg);
   background-size: contain;
   border: none;
 }
 .difficultyRange::-moz-range-track {
-  width: 55vw;
-  height: 0.5vw;
+  width: 100%;
+  height: 0.5rem;
   background: #205928;
 }
 
@@ -384,9 +380,8 @@ nav a:focus {
   background: url(../assets/placeHolderSprites/pokeball.jpg);
   background-size: contain;
   border: none;
-  color: #ffcb05;
+  color: white;
   transition: 0.1s;
-  font-family: "Pokemon-Solid";
 }
 .pokeBallButton:active {
   transform: scale(1.2);
@@ -405,14 +400,12 @@ nav a:focus {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);
   position: relative;
 }
-
 @media (max-width: 420px) {
   .pokeWrapper {
     max-width: 95vw;
     height: 100%;
   }
 }
-
 
 .quizContainer {
   display: flex;
@@ -627,19 +620,16 @@ nav a:focus {
 .openDex {
   transform: translateX(100%);
 }
-
 @media (max-width: 1300px) {
   .openDex {
     transform: translateX(0%);
-    background: rgba(0, 0, 0, 0.5);
     z-index: 99;
     color: white;
   }
 }
 @media (max-width: 1300px) and (max-width: 420px) {
   .openDex {
-    max-width: 50vw;
-
+    max-width: 90vw;
   }
 }
 
@@ -657,7 +647,6 @@ nav a:focus {
 .openSettings {
   transform: translateX(-100%);
 }
-
 @media (max-width: 1300px) {
   .openSettings {
     z-index: 99;
@@ -666,8 +655,7 @@ nav a:focus {
 }
 @media (max-width: 1300px) and (max-width: 420px) {
   .openSettings {
-    max-width: 50vw;
-
+    max-width: 95vw;
   }
 }
 
@@ -685,18 +673,31 @@ nav a:focus {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: lightblue;
+  width: 130px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border-radius: 15%;
+}
+.colm a, .shaishav a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.colm, .shaishav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #2a75bb;
   width: 130px;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   border-radius: 15%;
-
-  transition-duration: 0.05s;
-  box-shadow: 0px 0px calc(2rem * var(--userBlur)) 0px white;
-
   border: 2px ridge #3c5aa6;
-
 }
 .colm a, .shaishav a {
   color: white;
@@ -711,11 +712,6 @@ footer {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-}
-@media (max-width: 1200px) {
-  footer {
-    transform: translateY(600%);
-  }
 }
 
 * {
