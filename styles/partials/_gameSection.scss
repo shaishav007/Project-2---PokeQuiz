@@ -249,13 +249,12 @@ margin: 2rem 0;
   transform:translateX(100%);
   @media (max-width: $wideDesktop){
     transform:translateX(0%);
-    background: rgba(0, 0, 0, 0.5);
+    
     z-index: 99;
     color: white;
     @media (max-width: $mobile){
-      max-width: 50vw;
+      max-width: 90vw;
     }
-
   }
 }
 
@@ -269,15 +268,6 @@ margin: 2rem 0;
   bottom: 10%;
   padding: 5%;
 }
-
-
-  .innerDisplay{
-    background: green;
-    width: 100%;
-    height: 15rem;
-    border:10px ridge black;
-    @include glow(lightgreen,2rem,var(--blurMultiplier));
-
 .openSettings{
   transform:translateX(-100%);
   @media (max-width: $wideDesktop){
@@ -285,30 +275,36 @@ margin: 2rem 0;
     z-index: 99;
     transform:translateY(140%);
     @media (max-width: $mobile){
-      max-width: 50vw;
+      max-width: 95vw;
     }
-
   }
 }
 
-  .colm,.shaishav{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: lightblue;
-    width: 130px;
-    height: fit-content;
-    border-radius: 15%;
 
-    @include glow(white,2rem,var(--userBlur));
+.innerDisplay{
+  background: green;
+  width: 100%;
+  height: 15rem;
+  border:10px ridge black;
+  @include glow(lightgreen,2rem,var(--blurMultiplier));
+}
 
-    a{
-      color: white;
-      text-decoration: none;
-      text-transform: uppercase;
-    }
 
+.colm,.shaishav{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: lightblue;
+  width: 130px;
+  height: fit-content;
+  border-radius: 15%;
+  a{
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+}
 
 .colm,.shaishav{
   display: flex;

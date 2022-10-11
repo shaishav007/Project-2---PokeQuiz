@@ -1,92 +1,32 @@
 
+const pokeApp ={};
 
-    const pokeApp ={};
-
-    /*targets the counter div*/ 
-    let correctScore = 0;
-    const counter = document.getElementById('streakCounter')
-    pokeApp.range = 151;
+/*targets the counter div*/ 
+let correctScore = 0;
+const counter = document.getElementById('streakCounter')
+pokeApp.range = 151;
 
 
-    pokeApp.pokeArray = new Array();
-    pokeApp.init = function(){
-        // first, we fetch pokemon and populate the elements
-        pokeApp.populate();
+pokeApp.pokeArray = new Array();
+pokeApp.init = function(){
+    pokeApp.populate();
+    const bar = document.querySelector(".difficultyRangeMini");
+    bar.addEventListener('mousemove',pokeApp.handleUpdate);
+};
 
-        //contact us opens pokedex
-        const contactUsLink = document.querySelector(".contactUsLink");
-        contactUsLink.addEventListener('click',function(){
+pokeApp.sliderImgs = {
+  'beginner': "../assets/placeHolderSprites/pichu.png",
+  'intermediate': "../assets/placeHolderSprites/pikachu.png",
+  'advanced': "../assets/placeHolderSprites/raichu.png"
+};
 
-          pokeApp.makePokedexAppear();
-        });
-
-        //settings range
-        const bar = document.querySelector(".difficultyRangeMini");
-        bar.addEventListener('mousemove',pokeApp.handleUpdate);
-
-        //makers audio
-        const colmButton = document.querySelector(".colm");
-        const shaishavButton = document.querySelector(".shaishav");
-        colmButton.addEventListener('click',pokeApp.playAudioAndDisplayText);
-        shaishavButton.addEventListener('click',pokeApp.playAudioAndDisplayText);
-    };
-
-    //play audio
-    pokeApp.playAudioAndDisplayText = function(e){
-      // let audioToPlay = document.querySelector(audioClassName);
-      const colmAudio = new Audio(src="./sounds/ColmIntro.mp3");
-      const shaishavAudio = new Audio(src="./sounds/ShaishavIntro.mp3");
-
-      const innerDisplay = document.querySelector(".innerDisplay");
-      
-      innerDisplay.textContent="Reach Out to "+this.className+" on Linkedin?";
-      
-      //create a yes button
-      const yesButton = document.createElement('a');
-      yesButton.textContent='Yes';
-      yesButton.style.padding = `1rem`;
-      yesButton.style.display = "block";
-
-      //no button
-      const noButton = document.createElement('a');
-      noButton.textContent='No Thanks';
-      noButton.style.padding = `1rem`;
-      noButton.style.display = "block";
-
-      if(this.className=="colm"){
-        colmAudio.play();
-        yesButton.href = "https://www.linkedin.com/in/colm-o-sullivan-9163baa6/";
-        noButton.href='#';
-        
-      }
-      if(this.className=="shaishav"){
-        shaishavAudio.play();
-        yesButton.href = "https://www.linkedin.com/in/shaishavvashi/";
-        noButton.href='#';
-      }
-      
-      innerDisplay.appendChild(yesButton);
-      innerDisplay.appendChild(noButton);
-    }
-
-   pokeApp.sliderImgs = {
-      'beginner': "../assets/placeHolderSprites/pichu.png",
-      'intermediate': "../assets/placeHolderSprites/pikachu.png",
-      'advanced': "../assets/placeHolderSprites/raichu.png"
-
+pokeApp.handleUpdate = function(){
+  const label = document.querySelector(".settings label");
+  label.textContent= "Difficulty :"+pokeApp.range;
+  let entry = "";
+  if(this.value<151){
+    entry = pokeApp.sliderImgs['beginner'];
   }
-  pokeApp.handleUpdate = function(e){
-    //set the css variable slider img
-    //add the difficulty in label
-    const label = document.querySelector(".settings label");
-    label.textContent= "Difficulty :"+pokeApp.range;
-
-    let entry = "";
-    // console.log(this.value);
-    if(this.value<151){
-        entry = pokeApp.sliderImgs['beginner'];
-        
-    }
   else if(this.value<300){
     entry = pokeApp.sliderImgs['intermediate'];
   }
@@ -158,54 +98,7 @@ pokeApp.checkAnswer=function(){
         counter.textContent= correctScore;
       }
       const img = document.querySelector(".spriteContainer img");
-          img.style.filter=`brightness(1)`;
-      
-  };
-    //this function should run only after all the markups have been filled
-    pokeApp.runGame=function(){
-      //figure out a correct answer
-      const randomCorrectAnswer = Math.floor(Math.random()*4);
-      const buttonList = document.querySelectorAll(".quizOptions button"); 
-      const correctAnswerButton = buttonList[randomCorrectAnswer];
-      const correctPokemon = correctAnswerButton.textContent;
-      pokeApp.pokeArray.forEach((item)=>{
-        if(item.name == correctPokemon){
-          item.isCorrect = true;
-          const spriteContainer = document.querySelector(".spriteContainer");
-          const correctImg = document.createElement('img');
-          correctImg.src=item.image;
-          spriteContainer.appendChild(correctImg);
-        }
-      });
-
-      //NOW that everything has added lets setup the eventListeners
-      buttonList.forEach((item)=>{
-        item.addEventListener('click',pokeApp.checkAnswer);
-      });
-    };
-
-    //reset function called after the click has been done
-    pokeApp.reset =function(){
-      //empty the array and all the list elements
-      const quizOptions = document.querySelector(".quizOptions");
-      const spriteContainer = document.querySelector(".spriteContainer");
-      quizOptions.innerHTML="";
-      spriteContainer.innerHTML="";
-      pokeApp.pokeArray=[];
-    };
-
-    //animation of lights
-    pokeApp.animateLights = function(){
-      //animation effects of light
-
-      let i=0;
-      const animation = setInterval(function(){
-          document.documentElement.style.setProperty(`--blurMultiplier`,Math.random()*1.5);
-          console.log("delay works",i);
-      },150);
-      setTimeout(()=>{clearInterval(animation)},3000);
-      
-
+      img.style.filter=`brightness(1)`;
     }
     //pokedex entry for the correct answer
     if(item.isCorrect){
