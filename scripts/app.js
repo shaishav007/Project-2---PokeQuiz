@@ -75,6 +75,18 @@
       'advanced': "../assets/placeHolderSprites/raichu.png"
 
   }
+  pokeApp.handleUpdate = function(e){
+    //set the css variable slider img
+    //add the difficulty in label
+    const label = document.querySelector(".settings label");
+    label.textContent= "Difficulty :"+pokeApp.range;
+
+    let entry = "";
+    // console.log(this.value);
+    if(this.value<151){
+        entry = pokeApp.sliderImgs['beginner'];
+        
+    }
   else if(this.value<300){
     entry = pokeApp.sliderImgs['intermediate'];
   }
@@ -146,8 +158,7 @@ pokeApp.checkAnswer=function(){
         counter.textContent= correctScore;
       }
 
-      document.documentElement.style.setProperty(`--sliderImg`,`url(${entry})`);
-      pokeApp.range=this.value;
+      
   };
     //this function should run only after all the markups have been filled
     pokeApp.runGame=function(){
