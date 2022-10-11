@@ -4,17 +4,14 @@
 }
 
 .pokeWrapper {
-  
-  width: 420px;
+  width: 450px;
   height: 690px;
   margin: 2rem 0;
-  border-top-left-radius: 1.5rem;
-  border-bottom-left-radius: 1.5rem;
+  border-radius: 1.5rem;
   box-shadow: 0 4px 6px rgb(0 0 0 /10%), 0 1px 3px rgb(0 0 0 / 10%);
-
   position: relative;
-  @media (width: 405px) {
-    
+  @media (max-width: $mobile){
+    max-width: 95vw;
   }
 }
 
@@ -23,11 +20,11 @@
   flex-direction: column;
   align-items: center;
   height: 100%;
-
   position: relative;
   z-index: 10;
   background-color: $pokemonRed;
   border-style: groove;
+  border-radius: 1.5rem;
   padding: 1.5rem 4rem 3rem 4rem;
 }
 
@@ -50,6 +47,7 @@
       background-color: lightblue;
       color: black;
       border: 2px inset black;
+      margin: 3px 0;
     }
     .speakerContainer{
       display: flex;
@@ -84,7 +82,6 @@
   background: radial-gradient(circle, rgb(229, 231, 242) 0%, rgba(122,133,226,1) 48%, rgba(230,77,77,0.9791193008422852) 100%); 
   width: 300px;
   height: 240px;
-
   // animated-glow - color, spread,multiplier
   @include glow(white,5rem,var(--blurMultiplier));
   img {
@@ -102,8 +99,6 @@
       list-style: none;
       display: flex;
       justify-content: flex-start;
-      // margin: 0 auto;
-      // padding-left: 0;
     }
     .blueCircle{
       background-color: $pokemonBlueShadow;
@@ -123,7 +118,6 @@
       border: 1px solid;
       margin-left: 21px;
      list-style: none;
-
      //adding a red glow color, spread, multiplier
      @include glow(orange,1rem,var(--blurMultiplier));
   }
@@ -218,29 +212,6 @@ margin: 2rem 0;
     }
 }
 
-// .submitAnswer{
-//   border: none;
-//   border-radius: 0.5rem;
-//   outline: 0;
-//   font-family: $bodyFont;
-//   font-size: 1.2rem;
-//   font-weight: 600;
-//   padding: 0.5rem 1rem;
-//   margin: 0 auto;
-//   text-transform: uppercase;
-//   cursor: pointer;
-//   display: block;
-//   background-color: $pokemonGreen;
-//   color: black;
-//   letter-spacing: 2px;
-//   transition: all 300ms ease-in-out;
-//   box-shadow: 0 4px 0 0 $pokemonGreenDark;
-//   &:active{
-//     color: darkgray;
-//     }
-//   }
-
- 
   .pokedex{
     display: flex;
     flex-direction: column;
@@ -249,14 +220,15 @@ margin: 2rem 0;
     align-items: center;
     position: absolute;
     border: 5px ridge $pokemonRedShadow;
-    // height: 345px;
+    border-radius: 1.5rem;
     width: 420px;
     z-index: 1;
     background-color: $pokemonRed;
     transition-duration: 0.2s;
-    bottom: 34%;
+    bottom: 33%;
     padding: 5%;
     p{
+      text-transform: capitalize;
       width: 75%;
       font-size: 1.5rem;
       margin-block: 2rem;
@@ -270,13 +242,20 @@ margin: 2rem 0;
 
   .openDex{
     transform:translateX(100%);
-    
+    @media (max-width: $wideDesktop){
+      transform:translateX(0%);
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 99;
+      color: white;
+      @media (max-width: $mobile){
+        max-width: 95vw;
+      }
+    }
   }
 
   .settings{
     position: absolute;
     border: 5px ridge $pokemonRedShadow;
-    // height: 345px;
     width: 420px;
     z-index: 1;
     background-color: $pokemonRed;
@@ -287,6 +266,14 @@ margin: 2rem 0;
 
   .openSettings{
     transform:translateX(-100%);
+    @media (max-width: $wideDesktop){
+      // transform:translateX(0%);
+      z-index: 99;
+      transform:translateY(140%);
+      @media (max-width: $mobile){
+        max-width: 95vw;
+      }
+    }
   }
   .innerDisplay{
     background: green;
@@ -301,10 +288,11 @@ margin: 2rem 0;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: lightblue;
+    background-color: $pokemonBlueLight;
     width: 130px;
     height: fit-content;
     border-radius: 15%;
+    border: 2px ridge $pokemonBlueShadow;
     a{
       color: white;
       text-decoration: none;
