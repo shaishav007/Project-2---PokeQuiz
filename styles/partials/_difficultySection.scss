@@ -9,8 +9,7 @@
     flex-direction: column  ;
     justify-content: center;
     align-items: center;
-    height: 40vw;
-    
+    // height: 40vw;
     .headerText{
         font-family: $solidFont;
         text-transform: capitalize;
@@ -22,6 +21,13 @@
         color: $pokemonYellow;
         text-shadow: -1.5px -1.5px 0 $pokemonBlueLight, 1.5px -1.5px 0 $pokemonBlueLight, -1px 2px 0 $pokemonBlueLight, 1px 2px 0 $pokemonBlueLight;
         text-align: center;
+    h2{
+        font-size: 1.6rem;
+        font-family: $bodyFont;
+        text-transform: none;
+        letter-spacing: 2px;
+        color: $pokemonYellow;
+      }
     }
     .contentContainer{
         max-width: 75%;
@@ -38,13 +44,8 @@
                 font-size: 24px;
                 
             }
-            
-
-            
         }
     }
-
-    
 }
 
 .difficultyRange{
@@ -84,9 +85,14 @@
     }
 }
 
+.goButton{
+    display: flex;
+    justify-content: center;
+}
+
 .pokeBallButton{
     display: block;
-    margin: 0 auto;
+    // margin: 0 auto;
     padding: 5vw;
     font-size: 2rem;
     background: url(../assets/placeHolderSprites/pokeball.jpg);
@@ -94,7 +100,6 @@
     border: none;
     color: white;
     transition: 0.1s;
-
     &:active{
         transform: scale(1.2);
     }
