@@ -19,7 +19,7 @@ $bodyFont: 'game-text', sans-serif;
 $wideDesktop:"1300px";
 $desktop:"1000px";
 $tablet:"810px";
-$mobile:"500px";
+$mobile:"420px";
 
 @mixin glow($color,$spread,$multiplier){
     transition-duration:0.05s;

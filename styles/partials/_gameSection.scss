@@ -12,6 +12,7 @@
   position: relative;
   @media (max-width: $mobile){
     max-width: 95vw;
+    height: 100%;
   }
 }
 
@@ -212,91 +213,91 @@ margin: 2rem 0;
     }
 }
 
-  .pokedex{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    position: absolute;
-    border: 5px ridge $pokemonRedShadow;
-    border-radius: 1.5rem;
-    width: 420px;
-    z-index: 1;
-    background-color: $pokemonRed;
-    transition-duration: 0.2s;
-    bottom: 33%;
-    padding: 5%;
-    p{
-      text-transform: capitalize;
-      width: 75%;
-      font-size: 1.5rem;
-      margin-block: 2rem;
-    }
-    .devContainer{
-      width: 100%;
-      display: flex;
-      justify-content: space-evenly;
-    }
+.pokedex{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  position: absolute;
+  border: 5px ridge $pokemonRedShadow;
+  border-radius: 1.5rem;
+  width: 420px;
+  z-index: 1;
+  background-color: $pokemonRed;
+  transition-duration: 0.2s;
+  bottom: 33%;
+  padding: 5%;
+  p{
+    text-transform: capitalize;
+    width: 75%;
+    font-size: 1.5rem;
+    margin-block: 2rem;
   }
-
-  .openDex{
-    transform:translateX(100%);
-    @media (max-width: $wideDesktop){
-      transform:translateX(0%);
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 99;
-      color: white;
-      @media (max-width: $mobile){
-        max-width: 95vw;
-      }
-    }
-  }
-
-  .settings{
-    position: absolute;
-    border: 5px ridge $pokemonRedShadow;
-    width: 420px;
-    z-index: 1;
-    background-color: $pokemonRed;
-    transition-duration: 0.2s;
-    bottom: 10%;
-    padding: 5%;
-  }
-
-  .openSettings{
-    transform:translateX(-100%);
-    @media (max-width: $wideDesktop){
-      // transform:translateX(0%);
-      z-index: 99;
-      transform:translateY(140%);
-      @media (max-width: $mobile){
-        max-width: 95vw;
-      }
-    }
-  }
-  .innerDisplay{
-    background: green;
+  .devContainer{
     width: 100%;
-    height: 15rem;
-    border:10px ridge black;
-    @include glow(lightgreen,2rem,var(--blurMultiplier));
-  }
-
-  .colm,.shaishav{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: $pokemonBlueLight;
-    width: 130px;
-    height: fit-content;
-    border-radius: 15%;
-    border: 2px ridge $pokemonBlueShadow;
-    a{
-      color: white;
-      text-decoration: none;
-      text-transform: uppercase;
-    }
-
+    justify-content: space-evenly;
   }
+}
+
+.openDex{
+  transform:translateX(100%);
+  @media (max-width: $wideDesktop){
+    transform:translateX(0%);
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+    color: white;
+    @media (max-width: $mobile){
+      max-width: 50vw;
+    }
+  }
+}
+
+.settings{
+  position: absolute;
+  border: 5px ridge $pokemonRedShadow;
+  width: 420px;
+  z-index: 1;
+  background-color: $pokemonRed;
+  transition-duration: 0.2s;
+  bottom: 10%;
+  padding: 5%;
+}
+
+.openSettings{
+  transform:translateX(-100%);
+  @media (max-width: $wideDesktop){
+    // transform:translateX(0%);
+    z-index: 99;
+    transform:translateY(140%);
+    @media (max-width: $mobile){
+      max-width: 50vw;
+    }
+  }
+}
+
+.innerDisplay{
+  background: green;
+  width: 100%;
+  height: 15rem;
+  border:10px ridge black;
+  @include glow(lightgreen,2rem,var(--blurMultiplier));
+}
+
+.colm,.shaishav{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $pokemonBlueLight;
+  width: 130px;
+  height: fit-content;
+  border-radius: 15%;
+  border: 2px ridge $pokemonBlueShadow;
+  a{
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+}

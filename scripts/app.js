@@ -71,7 +71,6 @@ pokeApp.animateLights = function(){
   let i=0;
   const animation = setInterval(function(){
       document.documentElement.style.setProperty(`--blurMultiplier`,Math.random()*1.5);
-      console.log("delay works",i);
   },150);
   setTimeout(()=>{clearInterval(animation)},4000);
 }
@@ -119,7 +118,6 @@ pokeApp.checkAnswer=function(){
 /*makes difficulty settings appear*/ 
 pokeApp.makeSettingsAppear = function(){
   const settingsContainer = document.querySelector('.settings');
-  console.log(settingsContainer);
   settingsContainer.classList.toggle("openSettings");
 }
 
@@ -175,7 +173,6 @@ pokeApp.populate = function(){
     Promise.all(pokePromise)
       .then((data)=>{
         data.forEach((item)=>{
-          console.log(data);
           pokeApp.pokeArray.push({
             'name':item.name,
             'image':item.sprites.front_default,

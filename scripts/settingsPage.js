@@ -9,7 +9,6 @@ const settings = {};
 settings.handleUpdate = function(e){
     //set the css variable slider img
     let entry = "";
-    // console.log(this.value);
     if(this.value<151){
         entry = settings.sliderImgs['beginner'];
         
@@ -28,7 +27,6 @@ settings.handleUpdate = function(e){
 settings.init = function(){
     settings.bar = document.querySelector(".difficultyRange");
     settings.bar.addEventListener('mousemove',settings.handleUpdate);
-    console.log(settings.range);
     //once the Go button is clicked, then initialise this.
   };
       

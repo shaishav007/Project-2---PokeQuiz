@@ -292,7 +292,6 @@ nav a:focus {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 40vw;
 }
 .dropdownSection .headerText {
   font-family: "Pokemon-Solid";
@@ -396,9 +395,10 @@ nav a:focus {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);
   position: relative;
 }
-@media (max-width: 500px) {
+@media (max-width: 420px) {
   .pokeWrapper {
     max-width: 95vw;
+    height: 100%;
   }
 }
 
@@ -623,9 +623,9 @@ nav a:focus {
     color: white;
   }
 }
-@media (max-width: 1300px) and (max-width: 500px) {
+@media (max-width: 1300px) and (max-width: 420px) {
   .openDex {
-    max-width: 95vw;
+    max-width: 50vw;
   }
 }
 
@@ -649,9 +649,9 @@ nav a:focus {
     transform: translateY(140%);
   }
 }
-@media (max-width: 1300px) and (max-width: 500px) {
+@media (max-width: 1300px) and (max-width: 420px) {
   .openSettings {
-    max-width: 95vw;
+    max-width: 50vw;
   }
 }
 
