@@ -296,6 +296,7 @@ nav a:focus {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-position: center;
 }
 .dropdownSection .headerText {
   font-family: "Pokemon-Solid";
@@ -304,7 +305,7 @@ nav a:focus {
   letter-spacing: 10px;
   margin: 0 auto;
   position: absolute;
-  top: 140px;
+  top: 5%;
   color: #ffcb05;
   text-shadow: -1.5px -1.5px 0 #2a75bb, 1.5px -1.5px 0 #2a75bb, -1px 2px 0 #2a75bb, 1px 2px 0 #2a75bb;
   text-align: center;
@@ -333,9 +334,20 @@ nav a:focus {
   font-size: 24px;
 }
 
+label {
+  font-size: 2vw;
+  text-align: center;
+  display: block;
+  font-family: "Pokemon-Solid";
+  height: 3.5vw;
+  color: #ffcb05;
+  text-shadow: -1.5px -1.5px 0 #2a75bb, 1.5px -1.5px 0 #2a75bb, -1px 2px 0 #2a75bb, 1px 2px 0 #2a75bb;
+}
+
 .difficultyRange {
   height: 10vw;
   width: 90%;
+  -webkit-appearance: none;
 }
 .difficultyRange::-moz-range-thumb {
   width: 15rem;
@@ -345,6 +357,19 @@ nav a:focus {
   border: none;
 }
 .difficultyRange::-moz-range-track {
+  width: 100%;
+  height: 0.5rem;
+  background: #205928;
+}
+.difficultyRange::-webkit-range-thumb {
+  -webkit-appearance: none;
+  width: 15rem;
+  height: 15rem;
+  background: var(--sliderImg);
+  background-size: contain;
+  border: none;
+}
+.difficultyRange::-webkit-slider-runnable-track {
   width: 100%;
   height: 0.5rem;
   background: #205928;
@@ -380,8 +405,10 @@ nav a:focus {
   background: url(../assets/placeHolderSprites/pokeball.jpg);
   background-size: contain;
   border: none;
-  color: white;
+  color: #ffcb05;
   transition: 0.1s;
+  font-family: Pokemon-Solid;
+  text-shadow: -1.5px -1.5px 0 #2a75bb, 1.5px -1.5px 0 #2a75bb, -1px 2px 0 #2a75bb, 1px 2px 0 #2a75bb;
 }
 .pokeBallButton:active {
   transform: scale(1.2);
@@ -737,5 +764,5 @@ body {
 .wrapper {
   width: 80%;
   max-width: 1280px;
-  margin: 0 auto;
+  margin: 5% auto;
 }/*# sourceMappingURL=main.css.map */

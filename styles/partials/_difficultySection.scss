@@ -9,6 +9,7 @@
     flex-direction: column  ;
     justify-content: center;
     align-items: center;
+    background-position: center;
     // height: 40vw;
     .headerText{
         font-family: $solidFont;
@@ -17,7 +18,7 @@
         letter-spacing: 10px;
         margin: 0 auto;
         position: absolute;
-        top: 140px;
+        top: 5%;
         color: $pokemonYellow;
         text-shadow: -1.5px -1.5px 0 $pokemonBlueLight, 1.5px -1.5px 0 $pokemonBlueLight, -1px 2px 0 $pokemonBlueLight, 1px 2px 0 $pokemonBlueLight;
         text-align: center;
@@ -48,9 +49,20 @@
     }
 }
 
+label{
+    font-size: 2vw;
+    text-align: center;
+    display: block;
+    font-family: "Pokemon-Solid";
+    height: 3.5vw;
+    color: $pokemonYellow;
+    text-shadow: -1.5px -1.5px 0 #2a75bb, 1.5px -1.5px 0 #2a75bb, -1px 2px 0 #2a75bb, 1px 2px 0 #2a75bb;
+}
+
 .difficultyRange{
     height: 10vw;
     width: 90%;
+    -webkit-appearance: none;
     &::-moz-range-thumb{
         width: 15rem;
         height: 15rem;
@@ -60,6 +72,21 @@
     }
 
     &::-moz-range-track{
+        width: 100%;
+        height: 0.5rem;
+        background: #205928;
+    }
+
+    &::-webkit-range-thumb{
+        -webkit-appearance: none;
+        width: 15rem;
+        height: 15rem;
+        background:var(--sliderImg);
+        background-size: contain;
+        border: none;
+    }
+
+    &::-webkit-slider-runnable-track{
         width: 100%;
         height: 0.5rem;
         background: #205928;
@@ -86,8 +113,11 @@
 }
 
 .goButton{
+    
     display: flex;
     justify-content: center;
+    
+
 }
 
 .pokeBallButton{
@@ -98,8 +128,11 @@
     background: url(../assets/placeHolderSprites/pokeball.jpg);
     background-size: contain;
     border: none;
-    color: white;
+    color: $pokemonYellow;
     transition: 0.1s;
+
+    font-family: Pokemon-Solid;
+    text-shadow: -1.5px -1.5px 0 $pokemonBlueLight, 1.5px -1.5px 0 $pokemonBlueLight, -1px 2px 0 $pokemonBlueLight, 1px 2px 0 $pokemonBlueLight;
     &:active{
         transform: scale(1.2);
     }
