@@ -7,6 +7,7 @@ const settings = {};
 }
 
 settings.handleUpdate = function(e){
+    console.log(settings.range)
     //set the css variable slider img
     let entry = "";
     if(this.value<151){

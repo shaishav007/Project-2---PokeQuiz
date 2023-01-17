@@ -1,5 +1,4 @@
 
-
     const pokeApp ={};
 
     /*targets the counter div*/ 
@@ -31,18 +30,15 @@
       // let audioToPlay = document.querySelector(audioClassName);
       const colmAudio = new Audio(src="./sounds/ColmIntro.mp3");
       const shaishavAudio = new Audio(src="./sounds/ShaishavIntro.mp3");
-
       const innerDisplay = document.querySelector(".innerDisplay");
-      
       innerDisplay.textContent="Reach Out to "+this.className+" on Linkedin?";
       
-      //create a yes button
+      /*create a yes button*/
       const yesButton = document.createElement('a');
       yesButton.textContent='Yes';
       yesButton.style.padding = `1rem`;
       yesButton.style.display = "block";
-
-      //no button
+      /*no button*/
       const noButton = document.createElement('a');
       noButton.textContent='No Thanks';
       noButton.style.padding = `1rem`;
@@ -71,13 +67,9 @@
 
   }
   pokeApp.handleUpdate = function(e){
-    //set the css variable slider img
-    //add the difficulty in label
     const label = document.querySelector(".settings label");
     label.textContent= "Difficulty :"+pokeApp.range;
-
     let entry = "";
-    // console.log(this.value);
     if(this.value<151){
         entry = pokeApp.sliderImgs['beginner'];
         
@@ -121,7 +113,7 @@ pokeApp.reset =function(){
   pokeApp.pokeArray=[];
 };
 
-/*animation effects of lights*/
+/*Randomized animation effects of lights*/
 pokeApp.animateLights = function(){
   let i=0;
   const animation = setInterval(function(){
@@ -196,7 +188,6 @@ pokeApp.checkAnswer=function(){
       let i=0;
       const animation = setInterval(function(){
           document.documentElement.style.setProperty(`--blurMultiplier`,Math.random()*1.5);
-          console.log("delay works",i);
       },150);
       setTimeout(()=>{clearInterval(animation)},3000);
       
