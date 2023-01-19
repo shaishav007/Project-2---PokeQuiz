@@ -11,12 +11,10 @@
   border-radius: 1.5rem;
   box-shadow: 0 4px 6px rgb(0 0 0 /10%), 0 1px 3px rgb(0 0 0 / 10%);
   position: relative;
-
   @media (max-width: $mobile){
     max-width: 95vw;
     height: 100%;
   }
-
 }
 
 .quizContainer{
@@ -231,6 +229,7 @@ margin: 2rem 0;
   transition-duration: 0.2s;
   bottom: 33%;
   padding: 5%;
+  visibility: hidden;
   p{
     text-transform: capitalize;
     width: 75%;
@@ -246,6 +245,7 @@ margin: 2rem 0;
 
 
 .openDex{
+  visibility: visible;
   transform:translateX(100%);
   @media (max-width: $wideDesktop){
     transform:translateX(0%);
@@ -267,8 +267,10 @@ margin: 2rem 0;
   transition-duration: 0.2s;
   bottom: 10%;
   padding: 5%;
+  visibility: hidden;
 }
 .openSettings{
+  visibility: visible;
   transform:translateX(-100%);
   @media (max-width: $wideDesktop){
     // transform:translateX(0%);
